@@ -1,0 +1,26 @@
+{
+  "name": "עומק 360",
+  "short_name": "עומק 360",
+  "description": "הרשת החברתית של תכנית עומק 360",
+  "start_url": "/feed",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#C9A84C",
+  "orientation": "portrait",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
