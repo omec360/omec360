@@ -4,24 +4,36 @@ import { redirect } from "next/navigation";
 import { Profile } from "@/types";
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
-  const supabase = await createClient();
+  let supabase;
+  try {
+    supabase = await createClient();
+  } catch (e) {
+    console.error("[AppLayout] createClient failed:", e);
+    redirect("/login");
+  }
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  let user;
+  try {
+    const { data } = await supabase.auth.getUser();
+    user = data.user;
+  } catch (e) {
+    console.error("[AppLayout] getUser failed:", e);
+    redirect("/login");
+  }
 
   if (!user) redirect("/login");
 
   let profile: Profile | null = null;
   try {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from("profiles")
       .select("*")
       .eq("id", user.id)
       .single();
+    if (error) console.error("[AppLayout] profile error:", error);
     profile = data;
-  } catch {
-    // profile stays null
+  } catch (e) {
+    console.error("[AppLayout] profile fetch failed:", e);
   }
 
   return (
