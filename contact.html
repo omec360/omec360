@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר | O.M.E.C Studio – עומק</title>
+    <meta name="description" content="צרו קשר עם עומק לשיחת ייעוץ חינם – נמצא יחד את התוכנית המתאימה לבית הספר שלכם.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f4c025'/><text y='.9em' font-size='70' x='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='bold' fill='black'>ע</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">דלג לתוכן ראשי</a>
+
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="assets/logo.png" alt="OMEC Studio" class="h-10"></a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="index.html" class="nav-link">בית</a>
+                <a href="programs.html" class="nav-link">תוכניות</a>
+                <a href="about.html" class="nav-link">מי אנחנו?</a>
+                <a href="contact.html" class="nav-link active">צור קשר</a>
+                <a href="contact.html" class="bg-gold text-black px-5 py-2 rounded-full font-extrabold hover:scale-105 transition-all text-sm">לשיחת ייעוץ</a>
+            </nav>
+            <button class="md:hidden text-white" onclick="toggleMenu()" aria-label="פתח תפריט ניווט" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-black/95 px-6 pb-4 flex flex-col gap-4 text-sm font-semibold">
+            <a href="index.html" class="nav-link py-2">בית</a>
+            <a href="programs.html" class="nav-link py-2">תוכניות</a>
+            <a href="about.html" class="nav-link py-2">מי אנחנו?</a>
+            <a href="contact.html" class="nav-link py-2">צור קשר</a>
+        </div>
+    </header>
+
+    <!-- Page Title -->
+    <section class="pt-40 pb-16 px-6 text-center bg-[#0d0d0f]">
+        <span class="text-gold tracking-[0.3em] uppercase font-bold text-sm mb-4 block">בואו נדבר</span>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">צור קשר</h1>
+        <p class="text-xl text-gray-400 font-light max-w-xl mx-auto">השאירו פרטים ונחזור אליכם בהקדם האפשרי לקביעת שיחת ייעוץ ללא עלות</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16">
+
+            <!-- Form -->
+            <div class="card-blur p-10 rounded-3xl">
+                <h2 class="text-2xl font-extrabold mb-8">שיחת ייעוץ</h2>
+                <form id="contact-form" action="https://formsubmit.co/todaactt@gmail.com" method="POST" class="space-y-5">
+                    <input type="hidden" name="_subject" value="פנייה חדשה – עומק Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="">
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-300">שם בית הספר *</label>
+                        <input type="text" name="school" required placeholder="שם בית הספר"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-gold transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-300">שם איש הקשר *</label>
+                        <input type="text" name="name" required placeholder="שם מלא"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-gold transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-300">תפקיד</label>
+                        <input type="text" name="role" placeholder="מנהל, רכז, מורה..."
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-gold transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-300">טלפון *</label>
+                        <input type="tel" name="phone" required placeholder="050-0000000"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-gold transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-300">תוכנית מעניינת</label>
+                        <select name="program" class="w-full border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-gold transition" style="background-color: #111;">
+                            <option value="">בחרו תוכנית (אופציונלי)</option>
+                            <option value="עומק 360">עומק 360</option>
+                            <option value="AI Visual Storytelling">AI Visual Storytelling</option>
+                            <option value="קורס דיבייט">קורס דיבייט</option>
+                            <option value="תוכנית ליווי למועצת תלמידים">תוכנית ליווי למועצת תלמידים</option>
+                            <option value="מספר תוכניות">מספר תוכניות</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-gray-300">הערות נוספות</label>
+                        <textarea name="message" rows="3" placeholder="כל מה שתרצו לשתף איתנו..."
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-gold transition resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gold text-black py-4 rounded-full font-extrabold text-lg hover:scale-105 transition-all shadow-lg shadow-gold/20">
+                        שלחו פרטים
+                    </button>
+                </form>
+                <div id="form-success" class="hidden text-center py-10">
+                    <div class="text-6xl mb-4">✓</div>
+                    <h4 class="text-2xl font-extrabold text-gold mb-3">הפרטים נשלחו!</h4>
+                    <p class="text-gray-400 font-light">נחזור אליכם תוך יום-יומיים לקביעת השיחה</p>
+                </div>
+            </div>
+
+            <!-- Info -->
+            <div class="space-y-10">
+                <div>
+                    <h2 class="text-2xl font-extrabold mb-6">דרכי יצירת קשר</h2>
+                    <div class="space-y-6">
+                        <a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" class="flex items-center gap-5 card-blur p-5 rounded-2xl hover:border-gold transition group">
+                            <div class="w-12 h-12 rounded-full bg-[#25D366]/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.025 3.128l-.094.341-.533 1.94 1.969-.517.358-.094c.81.519 1.914.896 3.04.897l.001.001c3.181 0 5.767-2.586 5.767-5.766 0-3.18-2.585-5.766-5.765-5.766zm3.38 8.21c-.163.456-.81.844-1.222.934-.332.072-.767.128-2.285-.502-1.942-.806-3.199-2.777-3.296-2.906-.097-.129-.795-.945-.795-1.802s.446-1.28.604-1.453c.158-.173.344-.216.458-.216s.229.001.329.005c.109.005.253-.041.397.304.145.346.495 1.21.538 1.296s.072.187.014.303-.086.187-.173.288-.173.188-.244.274c-.072.086-.144.173-.062.317.082.144.364.6.782.973.538.48 1.002.629 1.144.7.144.072.229.058.315-.043.086-.1.373-.432.47-.58.098-.147.197-.12.33-.072s.844.398.989.47.241.108.276.166.035.344-.128.8zM12 1c-6.075 0-11 4.925-11 11s4.925 11 11 11 11-4.925 11-11-4.925-11-11-11zm0 20c-4.963 0-9-4.037-9-9s4.037-9 9-9 9 4.037 9 9-4.037 9-9 9z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-bold mb-1">WhatsApp</div>
+                                <div class="text-gray-400 text-sm font-light">054-987-8180 · זמינים לשאלות מהירות</div>
+                            </div>
+                        </a>
+                        <a href="mailto:todaactt@gmail.com" class="flex items-center gap-5 card-blur p-5 rounded-2xl hover:border-gold transition group">
+                            <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-bold mb-1">אימייל</div>
+                                <div class="text-gray-400 text-sm font-light">todaactt@gmail.com</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gold-divider"></div>
+
+                <div>
+                    <h3 class="text-xl font-extrabold mb-6">שאלות נפוצות</h3>
+                    <div class="space-y-4">
+                        <details class="card-blur rounded-xl overflow-hidden">
+                            <summary class="px-6 py-4 font-bold cursor-pointer hover:text-gold transition list-none flex justify-between items-center">
+                                <span>האם ניתן לשלב כמה תוכניות?</span>
+                                <span class="text-gold text-xl">+</span>
+                            </summary>
+                            <p class="px-6 pb-4 text-gray-400 font-light text-sm leading-relaxed">בהחלט! עובדים עמנו גם בתי ספר וגם מרכזי נוער, מועדוני ספורט ומרכזי קהילה – ורבים מהם מפעילים מספר תוכניות במקביל לקבוצות שונות. נשמח לבנות יחד חבילה מותאמת.</p>
+                        </details>
+                        <details class="card-blur rounded-xl overflow-hidden">
+                            <summary class="px-6 py-4 font-bold cursor-pointer hover:text-gold transition list-none flex justify-between items-center">
+                                <span>מה מאושר גפ"ן?</span>
+                                <span class="text-gold text-xl">+</span>
+                            </summary>
+                            <p class="px-6 pb-4 text-gray-400 font-light text-sm leading-relaxed">תוכנית עומק 360 מאושרת במערכת גפ"ן של משרד החינוך – המסלול המרכזי שלנו לבתי ספר. עם זאת, שאר התוכניות שלנו אינן מותנות בגפ"ן וניתן להפעיל אותן בכל מסגרת חינוכית: בתי ספר, מרכזי נוער ומרכזי קהילה.</p>
+                        </details>
+                        <details class="card-blur rounded-xl overflow-hidden">
+                            <summary class="px-6 py-4 font-bold cursor-pointer hover:text-gold transition list-none flex justify-between items-center">
+                                <span>לאיזה גיל מתאימות התוכניות?</span>
+                                <span class="text-gold text-xl">+</span>
+                            </summary>
+                            <p class="px-6 pb-4 text-gray-400 font-light text-sm leading-relaxed">התוכניות מותאמות לחטיבת ביניים ותיכון (כיתות ז׳–י״ב). לכל תוכנית יש התאמות גיל ספציפיות שנדון בהן בפגישת הייעוץ.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="py-12 px-6 bg-black border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/logo.png" alt="OMEC Studio" class="h-12 mb-4">
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">תוכניות חינוך ייחודיות המשלבות אמנות, יצירה וטכנולוגיה.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-widest text-sm uppercase text-gray-300">תוכניות</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="omek-360.html" class="hover:text-gold transition">עומק 360</a></li>
+                        <li><a href="ai-storytelling.html" class="hover:text-gold transition">AI Visual Storytelling</a></li>
+                        <li><a href="debate.html" class="hover:text-gold transition">קורס דיבייט</a></li>
+                        <li><a href="leadership.html" class="hover:text-gold transition">תוכנית ליווי למועצת תלמידים</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-widest text-sm uppercase text-gray-300">קישורים</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="about.html" class="hover:text-gold transition">מי אנחנו?</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition">צור קשר</a></li>
+                        <li><a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" class="hover:text-gold transition">WhatsApp</a></li>
+                        <li><a href="https://www.instagram.com/omec.studio" target="_blank" class="hover:text-gold transition flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span>Instagram</span></a></li>
+                        <li><a href="accessibility.html" class="hover:text-gold transition">הצהרת נגישות</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center text-gray-600 text-sm">
+                <p>&copy; 2025 עומק | O.M.E.C Studio – כל הזכויות שמורות</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" aria-label="יצירת קשר בוואטסאפ – ייפתח בלשונית חדשה" class="fixed bottom-6 left-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-2xl hover:scale-105 transition-all font-bold text-sm">
+        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.025 3.128l-.094.341-.533 1.94 1.969-.517.358-.094c.81.519 1.914.896 3.04.897l.001.001c3.181 0 5.767-2.586 5.767-5.766 0-3.18-2.585-5.766-5.765-5.766zm3.38 8.21c-.163.456-.81.844-1.222.934-.332.072-.767.128-2.285-.502-1.942-.806-3.199-2.777-3.296-2.906-.097-.129-.795-.945-.795-1.802s.446-1.28.604-1.453c.158-.173.344-.216.458-.216s.229.001.329.005c.109.005.253-.041.397.304.145.346.495 1.21.538 1.296s.072.187.014.303-.086.187-.173.288-.173.188-.244.274c-.072.086-.144.173-.062.317.082.144.364.6.782.973.538.48 1.002.629 1.144.7.144.072.229.058.315-.043.086-.1.373-.432.47-.58.098-.147.197-.12.33-.072s.844.398.989.47.241.108.276.166.035.344-.128.8zM12 1c-6.075 0-11 4.925-11 11s4.925 11 11 11 11-4.925 11-11-4.925-11-11-11zm0 20c-4.963 0-9-4.037-9-9s4.037-9 9-9 9 4.037 9 9-4.037 9-9 9z"/></svg>
+        <span>דברו איתנו</span>
+    </a>
+
+    <script>
+        function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');}
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = this;
+            const data = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(res => {
+                if (res.ok) {
+                    form.classList.add('hidden');
+                    document.getElementById('form-success').classList.remove('hidden');
+                }
+            }).catch(() => form.submit());
+        });
+    </script>
+    <script src="chat-widget.js"></script>
+    <script src="accessibility-widget.js"></script>
+</body>
+</html>

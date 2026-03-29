@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תוכנית ליווי למועצת תלמידים | O.M.E.C Studio</title>
+    <meta name="description" content="מסלול תוכנית ליווי למועצת תלמידים למועצת תלמידים – ניהול פרויקטים, הפקת אירועים ואחריות ציבורית לאורך שנה מלאה.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f4c025'/><text y='.9em' font-size='70' x='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='bold' fill='black'>ע</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --hero-img: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">דלג לתוכן ראשי</a>
+
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="assets/logo.png" alt="OMEC Studio" class="h-10"></a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="index.html" class="nav-link">בית</a>
+                <a href="programs.html" class="nav-link active">תוכניות</a>
+                <a href="about.html" class="nav-link">מי אנחנו?</a>
+                <a href="contact.html" class="nav-link">צור קשר</a>
+                <a href="contact.html" class="bg-gold text-black px-5 py-2 rounded-full font-extrabold hover:scale-105 transition-all text-sm">לשיחת ייעוץ</a>
+            </nav>
+            <button class="md:hidden text-white" onclick="toggleMenu()" aria-label="פתח תפריט ניווט" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-black/95 px-6 pb-4 flex flex-col gap-4 text-sm font-semibold">
+            <a href="index.html" class="nav-link py-2">בית</a>
+            <a href="programs.html" class="nav-link py-2">תוכניות</a>
+            <a href="about.html" class="nav-link py-2">מי אנחנו?</a>
+            <a href="contact.html" class="nav-link py-2">צור קשר</a>
+            <a href="contact.html" class="bg-gold text-black px-5 py-3 rounded-full font-extrabold text-center">לשיחת ייעוץ</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-program flex flex-col justify-center items-center text-center px-6 pt-20">
+        <div class="max-w-4xl">
+            <div class="inline-block px-5 py-1.5 rounded-full border border-gold text-gold font-bold text-xs mb-6 bg-gold/10 tracking-widest uppercase">
+                מועצת תלמידים · שנה מלאה · PBL
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tighter">תוכנית ליווי למועצת תלמידים<br>בית-ספרית</h1>
+            <p class="text-xl md:text-3xl font-light tracking-widest text-gold italic">להוביל. להפיק. לשנות.</p>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-20 px-6 bg-[#ece9e2]">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-xl md:text-2xl text-gray-700 font-light leading-relaxed">
+                מסלול ייחודי למועצת התלמידים – תלמידים שעוברים הכשרה בהיקף של 4 שעות שבועיות, <strong class="text-gray-900 font-bold">הופכים ממייצגים למפיקים אמיתיים</strong> שמובילים את האירועים הדגל של בית הספר.
+            </p>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-12 px-6 border-y border-black/10">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div><div class="text-4xl font-extrabold text-gold mb-1">4</div><div class="text-gray-600 text-xs uppercase tracking-widest">שעות שבועיות</div></div>
+            <div><div class="text-4xl font-extrabold text-gold mb-1">30</div><div class="text-gray-600 text-xs uppercase tracking-widest">שבועות</div></div>
+            <div><div class="text-4xl font-extrabold text-gold mb-1">4</div><div class="text-gray-600 text-xs uppercase tracking-widest">אירועים מובנים</div></div>
+            <div><div class="text-4xl font-extrabold text-gold mb-1">120</div><div class="text-gray-600 text-xs uppercase tracking-widest">שעות סה"כ</div></div>
+        </div>
+    </section>
+
+    <!-- Goals -->
+    <section class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-gold tracking-[0.3em] uppercase font-bold text-sm mb-4 block">מה המסלול משיג</span>
+                <h2 class="text-4xl font-extrabold">מטרות המסלול</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card-blur p-7 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h4 class="font-extrabold mb-3">מנהיגות יישומית</h4>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed">פיתוח מנהיגות יישומית ואחריות ציבורית – לא רק תפקיד, אלא השפעה אמיתית.</p>
+                </div>
+                <div class="card-blur p-7 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">📋</div>
+                    <h4 class="font-extrabold mb-3">כלים מקצועיים</h4>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed">הקניית כלים מקצועיים לניהול פרויקטים, תקציב, לוגיסטיקה ועבודת צוות.</p>
+                </div>
+                <div class="card-blur p-7 rounded-2xl text-center">
+                    <div class="text-4xl mb-4">🏫</div>
+                    <h4 class="font-extrabold mb-3">שייכות לבית הספר</h4>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed">חיזוק תחושת השייכות והמעורבות הבית-ספרית בקרב כלל התלמידים.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Annual Structure -->
+    <section class="py-24 px-6 bg-[#ece9e2]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-gold tracking-[0.3em] uppercase font-bold text-sm mb-4 block">מבנה שנתי</span>
+                <h2 class="text-4xl font-extrabold">4 אירועים מובנים לאורך השנה</h2>
+            </div>
+            <div class="space-y-8">
+                <div class="card-blur p-8 rounded-2xl">
+                    <div class="flex items-start gap-6">
+                        <div class="text-gold font-extrabold text-sm tracking-widest w-28 flex-shrink-0 pt-1">ספטמבר</div>
+                        <div>
+                            <h4 class="font-extrabold text-lg mb-2">שלב א׳ – יסודות והכשרה</h4>
+                            <p class="text-gray-600 font-light text-sm leading-relaxed">זהות מנהיגותית, ניהול ישיבה מקצועית, חלוקת תפקידים (תוכן, לוגיסטיקה, שיווק, כספים), מבוא לניהול פרויקטים, בניית גאנט, יסודות תקציב וניהול משאבים.</p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="tag">אמנת מסלול</span>
+                                <span class="tag">מבנה ארגוני</span>
+                                <span class="tag">תכנית עבודה שנתית</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-blur p-8 rounded-2xl border border-gold/20">
+                    <div class="flex items-start gap-6">
+                        <div class="text-gold font-extrabold text-sm tracking-widest w-28 flex-shrink-0 pt-1">אוק׳–נוב׳</div>
+                        <div>
+                            <h4 class="font-extrabold text-lg mb-2">אירוע ביניים 1</h4>
+                            <p class="text-gray-600 font-light text-sm leading-relaxed">אירוע קצר-טווח המאפשר תרגול ראשון של תהליך הפקה מלא בהיקף מצומצם. ביסוס נראות המסלול, תרגול תכנון והוצאה לפועל, חיזוק עבודת צוות.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-blur p-8 rounded-2xl border border-gold/40">
+                    <div class="flex items-start gap-6">
+                        <div class="text-gold font-extrabold text-sm tracking-widest w-28 flex-shrink-0 pt-1">נוב׳–ינואר</div>
+                        <div>
+                            <h4 class="font-extrabold text-lg mb-2">אירוע עומק 1</h4>
+                            <p class="text-gold text-xs font-bold tracking-widest mb-2 uppercase">אירוע רחב היקף · PBL מלא</p>
+                            <p class="text-gray-600 font-light text-sm leading-relaxed">חקר צרכים אמיתי, הגדרת מדדי הצלחה, עבודה מול הנהלה, ניהול תקציב מפורט, קמפיין שיווקי, חזרות וסימולציות, רפלקציה מקצועית.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-blur p-8 rounded-2xl">
+                    <div class="flex items-start gap-6">
+                        <div class="text-gold font-extrabold text-sm tracking-widest w-28 flex-shrink-0 pt-1">פבר׳–מרץ</div>
+                        <div>
+                            <h4 class="font-extrabold text-lg mb-2">אירוע ביניים 2</h4>
+                            <p class="text-gray-600 font-light text-sm leading-relaxed">יוזמה המאפשרת הובלה עצמאית יותר של התלמידים. שגד על קבלת החלטות עצמאית, ניהול זמן יעיל ואחריות אישית גבוהה.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-blur p-8 rounded-2xl border border-gold/40">
+                    <div class="flex items-start gap-6">
+                        <div class="text-gold font-extrabold text-sm tracking-widest w-28 flex-shrink-0 pt-1">מרץ–מאי</div>
+                        <div>
+                            <h4 class="font-extrabold text-lg mb-2">אירוע עומק 2 – שיא שנתי</h4>
+                            <p class="text-gold text-xs font-bold tracking-widest mb-2 uppercase">הפקת שיא · מורכבות לוגיסטית גבוהה</p>
+                            <p class="text-gray-600 font-light text-sm leading-relaxed">הפקת שיא שנתית. מורכבות לוגיסטית גבוהה, עבודה מול מספר גורמים, ניהול משברים בזמן אמת, הצגת תכנית להנהלה, דוח מסכם מקצועי.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold text-center mb-12">מיומנויות שנרכשות</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="card-blur p-5 rounded-xl"><div class="text-2xl mb-2">📊</div><div class="text-sm font-bold">ניהול פרויקטים</div></div>
+                <div class="card-blur p-5 rounded-xl"><div class="text-2xl mb-2">💰</div><div class="text-sm font-bold">בניית תקציב</div></div>
+                <div class="card-blur p-5 rounded-xl"><div class="text-2xl mb-2">🤝</div><div class="text-sm font-bold">עבודת צוות מתקדמת</div></div>
+                <div class="card-blur p-5 rounded-xl"><div class="text-2xl mb-2">⚡</div><div class="text-sm font-bold">החלטות תחת לחץ</div></div>
+                <div class="card-blur p-5 rounded-xl"><div class="text-2xl mb-2">🎤</div><div class="text-sm font-bold">דוברות מול קהל</div></div>
+                <div class="card-blur p-5 rounded-xl"><div class="text-2xl mb-2">🌍</div><div class="text-sm font-bold">אחריות ציבורית</div></div>
+                <div class="card-blur p-5 rounded-xl"><div class="text-2xl mb-2">♟️</div><div class="text-sm font-bold">חשיבה אסטרטגית</div></div>
+                <div class="card-blur p-5 rounded-xl"><div class="text-2xl mb-2">🔥</div><div class="text-sm font-bold">יוזמה ועצמאות</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 bg-[#f0ede5] text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-4xl font-extrabold mb-6">רוצים להעצים את מועצת התלמידים שלכם?</h2>
+            <p class="text-gray-600 mb-10 font-light text-lg text-center">בואו נבנה מסלול ליווי שיהפוך את בית הספר שלכם למרכז פעילות.</p>
+            <a href="contact.html" class="inline-flex items-center gap-4 bg-gold text-black px-10 py-5 rounded-full font-extrabold text-xl hover:scale-105 transition-all shadow-2xl shadow-gold/20">
+                <span>תאמו שיחת ייעוץ</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="py-12 px-6 bg-black border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/logo.png" alt="OMEC Studio" class="h-12 mb-4">
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">
+                        תוכניות חינוך ייחודיות המשלבות אמנות, יצירה וטכנולוגיה לפיתוח כישורי המאה ה-21.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-widest text-sm uppercase text-gray-300">תוכניות</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="omek-360.html" class="hover:text-gold transition">עומק 360</a></li>
+                        <li><a href="ai-storytelling.html" class="hover:text-gold transition">AI Visual Storytelling</a></li>
+                        <li><a href="debate.html" class="hover:text-gold transition">קורס דיבייט</a></li>
+                        <li><a href="leadership.html" class="hover:text-gold transition">תוכנית ליווי למועצת תלמידים</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-widest text-sm uppercase text-gray-300">יצירת קשר</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" class="hover:text-gold transition">WhatsApp</a></li>
+                        <li><a href="https://www.instagram.com/omec.studio" target="_blank" class="hover:text-gold transition flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span>Instagram</span></a></li>
+                        <li><a href="mailto:todaactt@gmail.com" class="hover:text-gold transition">todaactt@gmail.com</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition">שיחת ייעוץ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-sm">
+                <p>&copy; 2025 עומק | O.M.E.C Studio – כל הזכויות שמורות</p>
+                <div class="flex gap-6">
+                    <a href="accessibility.html" class="hover:text-white transition">הצהרת נגישות</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" aria-label="יצירת קשר בוואטסאפ – ייפתח בלשונית חדשה" class="fixed bottom-6 left-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-2xl hover:scale-105 transition-all font-bold text-sm">
+        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.025 3.128l-.094.341-.533 1.94 1.969-.517.358-.094c.81.519 1.914.896 3.04.897l.001.001c3.181 0 5.767-2.586 5.767-5.766 0-3.18-2.585-5.766-5.765-5.766zm3.38 8.21c-.163.456-.81.844-1.222.934-.332.072-.767.128-2.285-.502-1.942-.806-3.199-2.777-3.296-2.906-.097-.129-.795-.945-.795-1.802s.446-1.28.604-1.453c.158-.173.344-.216.458-.216s.229.001.329.005c.109.005.253-.041.397.304.145.346.495 1.21.538 1.296s.072.187.014.303-.086.187-.173.288-.173.188-.244.274c-.072.086-.144.173-.062.317.082.144.364.6.782.973.538.48 1.002.629 1.144.7.144.072.229.058.315-.043.086-.1.373-.432.47-.58.098-.147.197-.12.33-.072s.844.398.989.47.241.108.276.166.035.344-.128.8zM12 1c-6.075 0-11 4.925-11 11s4.925 11 11 11 11-4.925 11-11-4.925-11-11-11zm0 20c-4.963 0-9-4.037-9-9s4.037-9 9-9 9 4.037 9 9-4.037 9-9 9z"/></svg>
+        <span>דברו איתנו</span>
+    </a>
+    <script>
+function toggleMenu(){
+    const menu = document.getElementById('mobile-menu');
+    const isOpen = menu.classList.contains('open');
+    menu.classList.toggle('open');
+}
+document.addEventListener('click', function(e){
+    const menu = document.getElementById('mobile-menu');
+    const header = document.querySelector('header');
+    if (menu && menu.classList.contains('open') && !header.contains(e.target)){
+        menu.classList.remove('open');
+    }
+});
+</script>
+    <script src="chat-widget.js"></script>
+    <script src="accessibility-widget.js"></script>
+</body>
+</html>

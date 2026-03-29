@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עומק | O.M.E.C Studio – חינוך. יצירה. השפעה.</title>
+    <meta name="description" content="עומק – תוכניות חינוך ייחודיות לבתי ספר: עומק 360, AI Visual Storytelling, קורס דיבייט ומסלול תוכנית ליווי למועצת תלמידים. מפתחים כישורי המאה ה-21 דרך אמנות, קולנוע וטכנולוגיה.">
+    <meta name="keywords" content="תוכניות חינוך, בית ספר, עומק 360, דיבייט, AI, מנהיגות, תאטרון, קולנוע, גפן">
+    <meta property="og:title" content="עומק | O.M.E.C Studio">
+    <meta property="og:description" content="תוכניות חינוך ייחודיות לבתי ספר – אמנות, יצירה, השפעה.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f4c025'/><text y='.9em' font-size='70' x='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='bold' fill='black'>ע</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">דלג לתוכן ראשי</a>
+
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="OMEC Studio" class="h-10">
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="index.html" class="nav-link active">בית</a>
+                <a href="programs.html" class="nav-link">תוכניות</a>
+                <a href="about.html" class="nav-link">מי אנחנו?</a>
+                <a href="contact.html" class="nav-link">צור קשר</a>
+                <a href="contact.html" class="bg-gold text-black px-5 py-2 rounded-full font-extrabold hover:scale-105 transition-all text-sm">
+                    לשיחת ייעוץ
+                </a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none" onclick="toggleMenu()" aria-label="פתח תפריט ניווט" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="md:hidden bg-black/95 px-6 pb-4 flex flex-col gap-4 text-sm font-semibold">
+            <a href="index.html" class="nav-link py-2">בית</a>
+            <a href="programs.html" class="nav-link py-2">תוכניות</a>
+            <a href="about.html" class="nav-link py-2">מי אנחנו?</a>
+            <a href="contact.html" class="nav-link py-2">צור קשר</a>
+            <a href="contact.html" class="bg-gold text-black px-5 py-3 rounded-full font-extrabold text-center">לשיחת ייעוץ</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section flex flex-col justify-center items-center text-center px-6 pt-20">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-4 tracking-tighter" dir="ltr">O.M.E.C STUDIO</h1>
+            <p class="text-xl md:text-3xl font-light tracking-[0.15em] text-gold mb-8 italic">חינוך. יצירה. השפעה.</p>
+            <p class="text-lg md:text-2xl font-light mb-10 text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                אנחנו מאמינים שלכל תלמיד יש קול. אנחנו עוזרים לו למצוא אותו – דרך תיאטרון, קולנוע, בינה מלאכותית ומנהיגות.
+            </p>
+            <!-- Social Media Buttons -->
+            <div class="flex items-center justify-center gap-4 mb-10">
+                <a href="https://www.instagram.com/omec.studio" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center gap-2 bg-white/10 hover:bg-gold hover:text-black text-white border border-white/30 hover:border-gold px-6 py-3 rounded-full font-bold text-sm transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@omec.studio" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center gap-2 bg-white/10 hover:bg-gold hover:text-black text-white border border-white/30 hover:border-gold px-6 py-3 rounded-full font-bold text-sm transition-all">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.84a8.22 8.22 0 004.79 1.52V6.92a4.85 4.85 0 01-1.02-.23z"/></svg>
+                    <span>TikTok</span>
+                </a>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="programs.html" class="inline-flex items-center justify-center gap-3 bg-gold text-black px-8 py-4 rounded-full font-extrabold text-lg hover:scale-105 transition-all shadow-2xl shadow-gold/20">
+                    <span>לתוכניות שלנו</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </a>
+                <a href="contact.html" class="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg hover:border-gold hover:text-gold transition-all">
+                    <span>שיחת ייעוץ</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="py-12 px-6 bg-[#ece9e2] border-y border-black/10">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-extrabold text-gold mb-1">4</div>
+                <div class="text-gray-600 text-xs uppercase tracking-widest">תוכניות ייחודיות</div>
+            </div>
+            <div>
+                <div class="text-4xl font-extrabold text-gold mb-1">10+</div>
+                <div class="text-gray-600 text-xs uppercase tracking-widest">שנות ניסיון</div>
+            </div>
+            <div>
+                <div class="text-4xl font-extrabold text-gold mb-1">גפ"ן</div>
+                <div class="text-gray-600 text-xs uppercase tracking-widest">תוכנית מאושרת</div>
+            </div>
+            <div>
+                <div class="text-4xl font-extrabold text-gold mb-1">∞</div>
+                <div class="text-gray-600 text-xs uppercase tracking-widest">כלים לחיים</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Preview -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-6">התוכניות שלנו</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto font-light">
+                    ארבע תוכניות ייחודיות – כל אחת מפתחת כישורי המאה ה-21 בדרכה המיוחדת
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- עומק 360 -->
+                <a href="omek-360.html" class="card-blur p-8 rounded-3xl flex flex-col group cursor-pointer">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="tag">תוכנית דגל · גפ"ן</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-2">עומק 360</h3>
+                    <p class="text-gold text-sm font-bold tracking-widest mb-4">שפה. מצלמה. השפעה.</p>
+                    <p class="text-gray-600 font-light leading-relaxed flex-grow mb-6">
+                        תוכנית שנתית המשלבת תיאטרון, קולנוע ויצירה דיגיטלית. התלמידים עוברים מסע שלם מביטוי עצמי ועד יצירת תוכן שמשפיע על הקהילה שלהם.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold group-hover:gap-4 transition-all">
+                        <span>לפרטים המלאים</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </div>
+                </a>
+
+                <!-- AI Storytelling -->
+                <a href="ai-storytelling.html" class="card-blur p-8 rounded-3xl flex flex-col group cursor-pointer">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <span class="tag">חדשנות · AI</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-2">AI Visual Storytelling</h3>
+                    <p class="text-gold text-sm font-bold tracking-widest mb-4">סיפור. דימוי. יצירה.</p>
+                    <p class="text-gray-600 font-light leading-relaxed flex-grow mb-6">
+                        מסע דיגיטלי שמשלב כתיבה יוצרת, שפה קולנועית וכלי AI מתקדמים. התלמידים יוצרים סרט קצר המוקרן בטקס סיום חגיגי.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold group-hover:gap-4 transition-all">
+                        <span>לפרטים המלאים</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </div>
+                </a>
+
+                <!-- דיבייט -->
+                <a href="debate.html" class="card-blur p-8 rounded-3xl flex flex-col group cursor-pointer">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        </div>
+                        <span class="tag">חטיבה ותיכון</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-2">קורס דיבייט</h3>
+                    <p class="text-gold text-sm font-bold tracking-widest mb-4">לחשוב. לדבר. לשכנע.</p>
+                    <p class="text-gray-600 font-light leading-relaxed flex-grow mb-6">
+                        הכנה לעולם שבו חשיבה ביקורתית היא על-יכולת. התלמידים לומדים לנהל ויכוח מכובד ולבנות טיעון לוגי ברמה בינלאומית.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold group-hover:gap-4 transition-all">
+                        <span>לפרטים המלאים</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </div>
+                </a>
+
+                <!-- מנהיגות -->
+                <a href="leadership.html" class="card-blur p-8 rounded-3xl flex flex-col group cursor-pointer">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+                        </div>
+                        <span class="tag">מועצת תלמידים</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold mb-2">תוכנית ליווי למועצת תלמידים</h3>
+                    <p class="text-gold text-sm font-bold tracking-widest mb-4">להוביל. להפיק. לשנות.</p>
+                    <p class="text-gray-600 font-light leading-relaxed flex-grow mb-6">
+                        מסלול ייחודי למועצת התלמידים. הם הופכים למפיקים אמיתיים – מנהלים אירועים, מקבלים החלטות ומוציאים לפועל פרויקטים ברמה מקצועית.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold group-hover:gap-4 transition-all">
+                        <span>לפרטים המלאים</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="programs.html" class="inline-flex items-center gap-3 border border-gold/40 text-gold px-8 py-4 rounded-full font-bold hover:bg-gold/10 transition-all">
+                    לכל התוכניות
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="py-24 px-6 bg-[#ece9e2]">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-gold/10 h-[500px]">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="חינוך" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
+                    <span class="bg-gold text-black px-4 py-1 rounded font-bold text-sm tracking-widest">מדוע עומק?</span>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <span class="text-gold tracking-[0.3em] uppercase font-bold text-sm block">מדוע עומק?</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">מנוע להתפתחות<br><span class="text-gold">של תלמידים</span></h2>
+                <div class="space-y-5 text-lg text-gray-600 font-light leading-relaxed">
+                    <p>
+                        בתי הספר מתמודדים היום עם אתגר אמיתי: תלמידים שחיים בעולם של תוכן, מצלמות ורשתות – אבל חסרים כלים לבטא את עצמם, לקחת חלק ולהוביל.
+                    </p>
+                    <p>
+                        עומק פועלת מתוך תפיסה ברורה: כשנותנים לתלמידים כלים אמנותיים ותקשורתיים ברמה מקצועית – הם לא רק משתתפים. הם מתפתחים.
+                    </p>
+                    <p>
+                        התוכניות שלנו משלבות פדגוגיה עמוקה עם עולמות של תיאטרון, קולנוע, יצירה דיגיטלית ובניית פודקאסטים – ומייצרות תהליך חינוכי שמחזק ביטחון, אחריות, עבודת צוות ויכולת ביטוי.
+                    </p>
+                    <p>
+                        כל תוכנית בנויה כתהליך מובנה וברור – משלב החשיפה וההתנסות, דרך רכישת מיומנויות, ועד תוצר סופי משמעותי שמקבל במה.
+                    </p>
+                </div>
+                <a href="about.html" class="inline-flex items-center gap-3 text-gold font-bold hover:gap-5 transition-all">
+                    <span>קראו עלינו עוד</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Preview -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-gold tracking-[0.3em] uppercase font-bold text-sm mb-4 block">מי אנחנו</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold">הצוות שמאחורי עומק</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group text-center">
+                    <div class="relative h-72 mb-6 overflow-hidden rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img src="assets/or.webp" alt="אור בן־מלך" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-gold mb-1">אור בן־מלך</h3>
+                    <p class="text-gray-500 text-sm font-bold tracking-widest mb-3">שחקן קולנוע וטלוויזיה · איש חינוך ותוכן</p>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed">
+                        M.Ed במנהל חינוך, אוניברסיטת תל אביב. MFA בקולנוע, אוניברסיטת תל אביב. מורה למשחק ומרצה לביטוי מול מצלמה וקהל.
+                    </p>
+                </div>
+                <div class="group text-center">
+                    <div class="relative h-72 mb-6 overflow-hidden rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700">
+                        <img src="assets/michaeli.jpg" alt="מיכאלי גבעתי" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-gold mb-1">מיכאלי גבעתי</h3>
+                    <p class="text-gray-500 text-sm font-bold tracking-widest mb-3">שחקן טלוויזיה ותאטרון · יזם · איש חינוך</p>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed">
+                        למעלה מעשור של ניסיון בעבודה פדגוגית עם נוער. מביא את עולם המשחק לחינוך חברתי-ערכי.
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="about.html" class="inline-flex items-center gap-3 border border-gold/40 text-gold px-8 py-4 rounded-full font-bold hover:bg-gold/10 transition-all">
+                    לעמוד האודות
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- בין לקוחותינו -->
+    <section class="py-16 px-6 bg-[#ece9e2]">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="text-gold tracking-[0.3em] uppercase font-bold text-sm mb-4 block">שותפינו</span>
+            <h2 class="text-3xl font-extrabold mb-4">בין לקוחותינו</h2>
+            <p class="text-gray-600 font-light mb-10">בתי ספר ומוסדות חינוך שכבר עובדים עם עומק</p>
+            <!-- לוגואים יתווספו כאן -->
+            <div class="flex flex-wrap justify-center items-center gap-8 opacity-40">
+                <div class="w-28 h-12 bg-gray-400 rounded-lg"></div>
+                <div class="w-28 h-12 bg-gray-400 rounded-lg"></div>
+                <div class="w-28 h-12 bg-gray-400 rounded-lg"></div>
+                <div class="w-28 h-12 bg-gray-400 rounded-lg"></div>
+                <div class="w-28 h-12 bg-gray-400 rounded-lg"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold">הגישה שלנו</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-blur p-8 rounded-2xl">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-gold" fill="none" stroke="#f4c025" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold mb-3">מעשה ידי אנשי שטח</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">אור ומיכאלי הם שחקנים ואנשי חינוך שעובדים מול נוער מדי יום. כל תוכנית נבנית ב״עומק״ מתוך ניסיון ישיר בכיתה.</p>
+                </div>
+                <div class="card-blur p-8 rounded-2xl">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="#f4c025" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold mb-3">תוצרים אמיתיים</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">בכל תוכנית יש תוצרים פומביים – הצגה, סרט, טורניר, אירוע. התלמידים לא רק לומדים, הם יוצרים ומציגים בפני קהל אמיתי.</p>
+                </div>
+                <div class="card-blur p-8 rounded-2xl">
+                    <div class="w-12 h-12 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="#f4c025" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-extrabold mb-3">מותאם לכל מסגרת</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">כל בית-ספר, מרכז-נוער וקהילה הם עולמות שונים – לכן גם חינוך לא יכול להיות אחיד. אנחנו בונים יחד תהליך מדויק שמחובר לאנשים, למציאות ולמטרות הספציפיים של כל מוסד.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-6 bg-[#f0ede5]">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="gold-divider mb-16"></div>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-8">מוכנים לצאת לדרך?</h2>
+            <p class="text-xl text-gray-600 mb-12 font-light max-w-2xl mx-auto">
+                בואו נדבר ונמצא את התוכנית המתאימה ביותר לבית הספר שלכם
+            </p>
+            <a href="contact.html" class="inline-flex items-center gap-4 bg-gold text-black px-10 py-5 rounded-full font-extrabold text-xl hover:scale-105 transition-all shadow-2xl shadow-gold/20">
+                <span>תאמו שיחת ייעוץ</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="py-12 px-6 bg-black border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/logo.png" alt="OMEC Studio" class="h-12 mb-4">
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">
+                        תוכניות חינוך ייחודיות המשלבות אמנות, יצירה וטכנולוגיה לפיתוח כישורי המאה ה-21.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-widest text-sm uppercase text-gray-300">תוכניות</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="omek-360.html" class="hover:text-gold transition">עומק 360</a></li>
+                        <li><a href="ai-storytelling.html" class="hover:text-gold transition">AI Visual Storytelling</a></li>
+                        <li><a href="debate.html" class="hover:text-gold transition">קורס דיבייט</a></li>
+                        <li><a href="leadership.html" class="hover:text-gold transition">תוכנית ליווי למועצת תלמידים</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-widest text-sm uppercase text-gray-300">יצירת קשר</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" class="hover:text-gold transition">WhatsApp</a></li>
+                        <li><a href="https://www.instagram.com/omec.studio" target="_blank" class="hover:text-gold transition flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span>Instagram</span></a></li>
+                        <li><a href="mailto:todaactt@gmail.com" class="hover:text-gold transition">todaactt@gmail.com</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition">שיחת ייעוץ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600 text-sm">
+                <p>&copy; 2025 עומק | O.M.E.C Studio – כל הזכויות שמורות</p>
+                <div class="flex gap-6">
+                    <a href="accessibility.html" class="hover:text-white transition">הצהרת נגישות</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" aria-label="יצירת קשר בוואטסאפ – ייפתח בלשונית חדשה"
+        class="fixed bottom-6 left-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-2xl hover:scale-105 transition-all font-bold text-sm">
+        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.025 3.128l-.094.341-.533 1.94 1.969-.517.358-.094c.81.519 1.914.896 3.04.897l.001.001c3.181 0 5.767-2.586 5.767-5.766 0-3.18-2.585-5.766-5.765-5.766zm3.38 8.21c-.163.456-.81.844-1.222.934-.332.072-.767.128-2.285-.502-1.942-.806-3.199-2.777-3.296-2.906-.097-.129-.795-.945-.795-1.802s.446-1.28.604-1.453c.158-.173.344-.216.458-.216s.229.001.329.005c.109.005.253-.041.397.304.145.346.495 1.21.538 1.296s.072.187.014.303-.086.187-.173.288-.173.188-.244.274c-.072.086-.144.173-.062.317.082.144.364.6.782.973.538.48 1.002.629 1.144.7.144.072.229.058.315-.043.086-.1.373-.432.47-.58.098-.147.197-.12.33-.072s.844.398.989.47.241.108.276.166.035.344-.128.8zM12 1c-6.075 0-11 4.925-11 11s4.925 11 11 11 11-4.925 11-11-4.925-11-11-11zm0 20c-4.963 0-9-4.037-9-9s4.037-9 9-9 9 4.037 9 9-4.037 9-9 9z"/></svg>
+        <span>דברו איתנו</span>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('open');
+        }
+    </script>
+    <script src="chat-widget.js"></script>
+    <script src="accessibility-widget.js"></script>
+</body>
+</html>

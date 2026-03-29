@@ -1,0 +1,211 @@
+/* ===== BASE ===== */
+body {
+    font-family: 'Assistant', sans-serif;
+    background-color: #f7f5f1;
+    color: #1a1a2e;
+    scroll-behavior: smooth;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+}
+
+p {
+    text-align: right;
+    line-height: 1.75;
+    letter-spacing: 0.03em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+/* ===== COLORS ===== */
+.bg-gold { background-color: #f4c025; }
+.text-gold { color: #f4c025; }
+.border-gold { border-color: #f4c025; }
+
+/* ===== GRADIENT ===== */
+.gradient-text {
+    background: linear-gradient(to right, #f4c025, #1a1a2e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== HERO TEXT (stays white on dark bg) ===== */
+.hero-section,
+.hero-program {
+    color: #ffffff;
+}
+
+/* ===== HERO ===== */
+.hero-section {
+    background: linear-gradient(rgba(10, 10, 12, 0.65), rgba(10, 10, 12, 0.92)),
+        url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.hero-program {
+    background: linear-gradient(rgba(10, 10, 12, 0.75), rgba(10, 10, 12, 0.95)),
+        var(--hero-img, url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'));
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+}
+
+/* ===== CARDS ===== */
+.card-blur {
+    background: rgba(26, 26, 46, 0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(26, 26, 46, 0.12);
+    transition: all 0.3s ease;
+}
+
+.card-blur:hover {
+    border-color: #f4c025;
+    background: rgba(26, 26, 46, 0.08);
+    transform: translateY(-4px);
+}
+
+/* ===== BADGE PULSE ===== */
+.badge-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1);    box-shadow: 0 0 0 0   rgba(244, 192, 37, 0.4); }
+    70%  { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(244, 192, 37, 0); }
+    100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(244, 192, 37, 0); }
+}
+
+/* ===== NAV ACTIVE ===== */
+.nav-link {
+    position: relative;
+    transition: color 0.2s;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: #f4c025;
+    transition: width 0.3s;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: #f4c025;
+}
+
+/* ===== PROGRAM TAG ===== */
+.tag {
+    background: rgba(244, 192, 37, 0.1);
+    border: 1px solid rgba(244, 192, 37, 0.3);
+    color: #f4c025;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+/* ===== MODULE STEP ===== */
+.module-step {
+    border-right: 2px solid rgba(244, 192, 37, 0.3);
+    padding-right: 1.5rem;
+    position: relative;
+}
+.module-step::before {
+    content: '';
+    position: absolute;
+    right: -7px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #f4c025;
+}
+
+/* ===== DIVIDER ===== */
+.gold-divider {
+    height: 1px;
+    background: linear-gradient(to left, transparent, #f4c025, transparent);
+}
+
+/* ===== FOOTER ===== */
+footer a:hover {
+    color: #f4c025;
+}
+
+/* ===== MOBILE NAV ===== */
+#mobile-menu {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+#mobile-menu.open {
+    max-height: 400px;
+    opacity: 1;
+}
+
+/* ===== נגישות – תקן ישראלי 5568 / WCAG 2.0 AA ===== */
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: #f4c025;
+    color: #000;
+    padding: 10px 20px;
+    font-weight: 800;
+    font-size: 16px;
+    z-index: 9999;
+    transition: top 0.2s;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus indicators */
+*:focus-visible {
+    outline: 3px solid #f4c025;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Accessibility mode classes */
+body.a11y-contrast {
+    filter: contrast(160%) brightness(1.1);
+}
+body.a11y-contrast * {
+    border-color: #fff !important;
+}
+body.a11y-grayscale {
+    filter: grayscale(100%);
+}
+body.a11y-underline-links a {
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+}
+body.a11y-readable-font,
+body.a11y-readable-font * {
+    font-family: Arial, Helvetica, sans-serif !important;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+}
+body.a11y-no-animations *,
+body.a11y-no-animations *::before,
+body.a11y-no-animations *::after {
+    animation: none !important;
+    transition: none !important;
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הצהרת נגישות | O.M.E.C Studio</title>
+    <meta name="description" content="הצהרת נגישות של עומק O.M.E.C Studio – מחויבות לנגישות דיגיטלית לפי תקן ישראלי 5568 ו-WCAG 2.0 AA.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f4c025'/><text y='.9em' font-size='70' x='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='bold' fill='black'>ע</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">דלג לתוכן ראשי</a>
+
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="assets/logo.png" alt="OMEC Studio" class="h-10"></a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="index.html" class="nav-link">בית</a>
+                <a href="programs.html" class="nav-link">תוכניות</a>
+                <a href="about.html" class="nav-link">מי אנחנו?</a>
+                <a href="contact.html" class="nav-link">צור קשר</a>
+                <a href="contact.html" class="bg-gold text-black px-5 py-2 rounded-full font-extrabold hover:scale-105 transition-all text-sm">לשיחת ייעוץ</a>
+            </nav>
+            <button class="md:hidden text-white" onclick="toggleMenu()" aria-label="פתח תפריט ניווט" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-black/95 px-6 pb-4 flex flex-col gap-4 text-sm font-semibold">
+            <a href="index.html" class="nav-link py-2">בית</a>
+            <a href="programs.html" class="nav-link py-2">תוכניות</a>
+            <a href="about.html" class="nav-link py-2">מי אנחנו?</a>
+            <a href="contact.html" class="nav-link py-2">צור קשר</a>
+            <a href="contact.html" class="bg-gold text-black px-5 py-3 rounded-full font-extrabold text-center">לשיחת ייעוץ</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="main-content" class="pt-32 pb-16 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-3 px-5 py-1.5 rounded-full border border-blue-400/40 text-blue-400 font-bold text-xs mb-6 bg-blue-400/10 tracking-widest uppercase">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M12 7c-1.1 0-2 .9-2 2v4l-2 4h2l1-2h2l1 2h2l-2-4V9c0-1.1-.9-2-2-2z"/></svg>
+                נגישות דיגיטלית
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tighter">הצהרת נגישות</h1>
+            <p class="text-xl text-gray-400 font-light">עומק | O.M.E.C Studio מחויבת לנגישות דיגיטלית לכלל המשתמשים</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-8 px-6 pb-24">
+        <div class="max-w-3xl mx-auto space-y-12">
+
+            <!-- Section 1: Commitment -->
+            <div class="card-blur p-8 rounded-2xl">
+                <h2 class="text-2xl font-extrabold mb-4 text-gold">מחויבות לנגישות</h2>
+                <p class="text-gray-300 font-light leading-relaxed">
+                    עומק | O.M.E.C Studio מאמינה שלכל אדם מגיעה גישה שווה למידע ולשירותים דיגיטליים, ללא קשר ליכולותיו. לפיכך אנו פועלים לעמוד בדרישות <strong class="text-white">תקן ישראלי 5568</strong> (המבוסס על WCAG 2.0 ברמה AA), בהתאם ל<strong class="text-white">תיקון 35 לחוק שוויון זכויות לאנשים עם מוגבלות</strong>.
+                </p>
+            </div>
+
+            <!-- Section 2: Compliance Level -->
+            <div class="card-blur p-8 rounded-2xl">
+                <h2 class="text-2xl font-extrabold mb-4 text-gold">רמת הנגישות</h2>
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 font-extrabold text-sm">WCAG 2.0 AA</span>
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-gold/20 border border-gold/40 text-gold font-extrabold text-sm">תקן ישראלי 5568</span>
+                </div>
+                <p class="text-gray-300 font-light leading-relaxed">
+                    האתר עבר התאמות נגישות ומיועד לעמוד ברמה AA של הנחיות WCAG 2.0. אנו ממשיכים לשפר את הנגישות באופן שוטף.
+                </p>
+            </div>
+
+            <!-- Section 3: What We've Done -->
+            <div class="card-blur p-8 rounded-2xl">
+                <h2 class="text-2xl font-extrabold mb-6 text-gold">מה עשינו לנגישות האתר</h2>
+                <ul class="space-y-3 text-gray-300 font-light" role="list">
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>כפתור "דלג לתוכן ראשי" בראש כל עמוד לניווט מהיר במקלדת</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>הגדרת שפה (<code lang="he" dir="ltr">lang="he"</code>) וכיוון (<code lang="he" dir="ltr">dir="rtl"</code>) על כל עמודי האתר</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>טקסט חלופי (alt text) לכל התמונות</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>תוויות (labels) ברורות לכל שדות הטופס</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>תגיות ARIA על כפתורי ניווט, תפריט נייד וכפתורים אינטראקטיביים</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>מחוון פוקוס גלוי לניווט במקלדת (מסגרת זהובה)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>היררכיית כותרות תקינה (H1, H2, H3) בכל עמודי האתר</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>כלי נגישות צף המאפשר: הגדלת טקסט, ניגודיות גבוהה, גווני אפור, הדגשת קישורים, גופן קריא ועצירת אנימציות</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>שמירת העדפות הנגישות בין ביקורים</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gold font-bold mt-0.5 flex-shrink-0">✓</span>
+                        <span>תאימות לקוראי מסך (NVDA, JAWS, VoiceOver)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 4: Known Limitations -->
+            <div class="card-blur p-8 rounded-2xl">
+                <h2 class="text-2xl font-extrabold mb-6 text-gold">מגבלות ידועות</h2>
+                <p class="text-gray-400 font-light mb-4">חרף מאמצינו, ייתכנו חלקים באתר שטרם הושלמה הנגשתם:</p>
+                <ul class="space-y-3 text-gray-400 font-light" role="list">
+                    <li class="flex items-start gap-3">
+                        <span class="text-gray-500 flex-shrink-0 mt-0.5">•</span>
+                        <span>תכנים שיוטמעו בעתיד (סרטונים, גלריות) ייתכן שטרם הונגשו במלואם</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gray-500 flex-shrink-0 mt-0.5">•</span>
+                        <span>כפתור הצ'אט (AI) הוא שירות חיצוני – ייתכנו מגבלות נגישות בממשקו</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-gray-500 flex-shrink-0 mt-0.5">•</span>
+                        <span>קישורים לרשתות חברתיות חיצוניות (Instagram, WhatsApp) כפופים למדיניות הנגישות של אותן פלטפורמות</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Section 5: Contact for Accessibility -->
+            <div class="card-blur p-8 rounded-2xl border-blue-500/20" style="border-color:rgba(59,130,246,0.2);">
+                <h2 class="text-2xl font-extrabold mb-4 text-gold">נתקלתם בבעיית נגישות?</h2>
+                <p class="text-gray-300 font-light leading-relaxed mb-6">
+                    אם נתקלתם בקושי לגשת לתוכן כלשהו באתר, או שיש לכם הצעה לשיפור הנגישות – נשמח לשמוע. נעשה את מירב המאמצים לטפל בפנייה בהקדם.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" aria-label="שלח הודעה בוואטסאפ בנושא נגישות"
+                        class="flex items-center gap-3 bg-[#25D366]/10 border border-[#25D366]/30 px-5 py-4 rounded-xl text-white font-bold hover:bg-[#25D366]/20 transition">
+                        <svg class="w-5 h-5 text-[#25D366] flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.025 3.128l-.094.341-.533 1.94 1.969-.517.358-.094c.81.519 1.914.896 3.04.897l.001.001c3.181 0 5.767-2.586 5.767-5.766 0-3.18-2.585-5.766-5.765-5.766zm3.38 8.21c-.163.456-.81.844-1.222.934-.332.072-.767.128-2.285-.502-1.942-.806-3.199-2.777-3.296-2.906-.097-.129-.795-.945-.795-1.802s.446-1.28.604-1.453c.158-.173.344-.216.458-.216s.229.001.329.005c.109.005.253-.041.397.304.145.346.495 1.21.538 1.296s.072.187.014.303-.086.187-.173.288-.173.188-.244.274c-.072.086-.144.173-.062.317.082.144.364.6.782.973.538.48 1.002.629 1.144.7.144.072.229.058.315-.043.086-.1.373-.432.47-.58.098-.147.197-.12.33-.072s.844.398.989.47.241.108.276.166.035.344-.128.8zM12 1c-6.075 0-11 4.925-11 11s4.925 11 11 11 11-4.925 11-11-4.925-11-11-11zm0 20c-4.963 0-9-4.037-9-9s4.037-9 9-9 9 4.037 9 9-4.037 9-9 9z"/></svg>
+                        <div>
+                            <div class="text-sm font-extrabold">WhatsApp</div>
+                            <div class="text-xs text-gray-400 font-normal">054-987-8180</div>
+                        </div>
+                    </a>
+                    <a href="mailto:todaactt@gmail.com?subject=פנייה בנושא נגישות אתר"
+                        class="flex items-center gap-3 bg-white/5 border border-white/10 px-5 py-4 rounded-xl text-white font-bold hover:bg-white/10 transition">
+                        <svg class="w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <div>
+                            <div class="text-sm font-extrabold">אימייל</div>
+                            <div class="text-xs text-gray-400 font-normal">todaactt@gmail.com</div>
+                        </div>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-xs font-light mt-4">
+                    רכז הנגישות: מיכאלי גבעתי · זמין בימים א'–ה', 09:00–18:00
+                </p>
+            </div>
+
+            <!-- Section 6: Legal -->
+            <div class="card-blur p-8 rounded-2xl">
+                <h2 class="text-2xl font-extrabold mb-4 text-gold">בסיס חוקי</h2>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    הצהרה זו ניתנת בהתאם ל<strong class="text-gray-300">תיקון 35 לחוק שוויון זכויות לאנשים עם מוגבלות, תשנ"ח-1998</strong>, ובהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013.
+                </p>
+                <p class="text-gray-600 text-xs font-light mt-4">
+                    הצהרה זו עודכנה לאחרונה: מרץ 2026
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo" class="py-12 px-6 bg-black border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="assets/logo.png" alt="OMEC Studio" class="h-12 mb-4">
+                    <p class="text-gray-500 text-sm font-light leading-relaxed">תוכניות חינוך ייחודיות המשלבות אמנות, יצירה וטכנולוגיה.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-widest text-sm uppercase text-gray-300">תוכניות</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="omek-360.html" class="hover:text-gold transition">עומק 360</a></li>
+                        <li><a href="ai-storytelling.html" class="hover:text-gold transition">AI Visual Storytelling</a></li>
+                        <li><a href="debate.html" class="hover:text-gold transition">קורס דיבייט</a></li>
+                        <li><a href="leadership.html" class="hover:text-gold transition">תוכנית ליווי למועצת תלמידים</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 tracking-widest text-sm uppercase text-gray-300">קישורים</h4>
+                    <ul class="space-y-2 text-gray-500 text-sm">
+                        <li><a href="about.html" class="hover:text-gold transition">מי אנחנו?</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition">צור קשר</a></li>
+                        <li><a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" class="hover:text-gold transition">WhatsApp</a></li>
+                        <li><a href="https://www.instagram.com/omec.studio" target="_blank" class="hover:text-gold transition flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span>Instagram</span></a></li>
+                        <li><a href="accessibility.html" class="text-blue-400 hover:text-blue-300 transition font-semibold" aria-current="page">הצהרת נגישות</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center text-gray-600 text-sm">
+                <p>&copy; 2025 עומק | O.M.E.C Studio – כל הזכויות שמורות</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/972549878180?text=%D7%94%D7%99%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%AA%D7%95%D7%9B%D7%A0%D7%99%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9B%D7%9D" target="_blank" aria-label="יצירת קשר בוואטסאפ – ייפתח בלשונית חדשה" class="fixed bottom-6 left-6 z-50 flex items-center gap-3 bg-[#25D366] text-white px-5 py-3 rounded-full shadow-2xl hover:scale-105 transition-all font-bold text-sm">
+        <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.025 3.128l-.094.341-.533 1.94 1.969-.517.358-.094c.81.519 1.914.896 3.04.897l.001.001c3.181 0 5.767-2.586 5.767-5.766 0-3.18-2.585-5.766-5.765-5.766zm3.38 8.21c-.163.456-.81.844-1.222.934-.332.072-.767.128-2.285-.502-1.942-.806-3.199-2.777-3.296-2.906-.097-.129-.795-.945-.795-1.802s.446-1.28.604-1.453c.158-.173.344-.216.458-.216s.229.001.329.005c.109.005.253-.041.397.304.145.346.495 1.21.538 1.296s.072.187.014.303-.086.187-.173.288-.173.188-.244.274c-.072.086-.144.173-.062.317.082.144.364.6.782.973.538.48 1.002.629 1.144.7.144.072.229.058.315-.043.086-.1.373-.432.47-.58.098-.147.197-.12.33-.072s.844.398.989.47.241.108.276.166.035.344-.128.8zM12 1c-6.075 0-11 4.925-11 11s4.925 11 11 11 11-4.925 11-11-4.925-11-11-11zm0 20c-4.963 0-9-4.037-9-9s4.037-9 9-9 9 4.037 9 9-4.037 9-9 9z"/></svg>
+        <span>דברו איתנו</span>
+    </a>
+    <script>
+function toggleMenu(){
+    const menu = document.getElementById('mobile-menu');
+    const isOpen = menu.classList.contains('open');
+    menu.classList.toggle('open');
+}
+document.addEventListener('click', function(e){
+    const menu = document.getElementById('mobile-menu');
+    const header = document.querySelector('header');
+    if (menu && menu.classList.contains('open') && !header.contains(e.target)){
+        menu.classList.remove('open');
+    }
+});
+</script>
+    <script src="chat-widget.js"></script>
+    <script src="accessibility-widget.js"></script>
+</body>
+</html>
