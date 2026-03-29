@@ -1,8 +1,8 @@
 /* ===== BASE ===== */
 body {
     font-family: 'Assistant', sans-serif;
-    background-color: #f7f5f1;
-    color: #1a1a2e;
+    background-color: #0e1019;
+    color: #f0eff5;
     scroll-behavior: smooth;
     letter-spacing: 0.02em;
     line-height: 1.6;
@@ -26,20 +26,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== GRADIENT ===== */
 .gradient-text {
-    background: linear-gradient(to right, #f4c025, #1a1a2e);
+    background: linear-gradient(to right, #f4c025, #ffffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* ===== HERO TEXT (stays white on dark bg) ===== */
-.hero-section,
-.hero-program {
-    color: #ffffff;
-}
-
 /* ===== HERO ===== */
 .hero-section {
-    background: linear-gradient(rgba(10, 10, 12, 0.65), rgba(10, 10, 12, 0.92)),
+    background: linear-gradient(rgba(14, 16, 25, 0.55), rgba(14, 16, 25, 0.88)),
         url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
@@ -56,15 +50,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== CARDS ===== */
 .card-blur {
-    background: rgba(26, 26, 46, 0.04);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(26, 26, 46, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 
 .card-blur:hover {
     border-color: #f4c025;
-    background: rgba(26, 26, 46, 0.08);
+    background: rgba(255, 255, 255, 0.07);
     transform: translateY(-4px);
 }
 
