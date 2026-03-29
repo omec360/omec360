@@ -92,7 +92,7 @@ export default async function PortfolioPage({ params }: { params: { id: string }
 
                   {sub.media_urls?.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-2">
-                      {sub.media_urls.map((url, i) => {
+                      {(sub.media_urls as string[]).map((url: string, i: number) => {
                         const isVideo = url.match(/\.(mp4|mov|webm|avi)/i);
                         const isImage = url.match(/\.(jpg|jpeg|png|gif|webp)/i);
                         return isImage ? (
