@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-import { Home, PlusSquare, User, LogOut, Shield } from "lucide-react";
+import { Home, PlusSquare, User, LogOut, Shield, BookOpen, ClipboardList, GraduationCap } from "lucide-react";
 import { Profile } from "@/types";
 import { getInitials } from "@/lib/utils";
 
@@ -22,38 +22,44 @@ export default function Navbar({ profile }: NavbarProps) {
     router.refresh();
   }
 
+  const isTeacher = profile?.role === "teacher" || profile?.role === "admin";
+  const isAdmin = profile?.role === "admin";
+
   const navItems = [
-    { href: "/feed", icon: Home, label: "פיד" },
-    { href: "/upload", icon: PlusSquare, label: "העלאה" },
-    ...(profile ? [{ href: `/profile/${profile.id}`, icon: User, label: "הפרופיל שלי" }] : []),
-    ...(profile?.role === "admin" ? [{ href: "/admin", icon: Shield, label: "ניהול" }] : []),
+    { href: "/dashboard", icon: Home, label: "בית" },
+    { href: "/assignments", icon: ClipboardList, label: "משימות" },
+    { href: "/knowledge", icon: BookOpen, label: "מרכז ידע" },
+    { href: "/feed", icon: PlusSquare, label: "פיד" },
+    ...(profile ? [{ href: `/profile/${profile.id}`, icon: User, label: "הפרופיל" }] : []),
+    ...(isTeacher ? [{ href: "/teacher", icon: GraduationCap, label: "מחנך" }] : []),
+    ...(isAdmin ? [{ href: "/admin", icon: Shield, label: "ניהול" }] : []),
   ];
 
   return (
     <nav className="fixed top-0 right-0 left-0 z-50 bg-dark-100 border-b border-dark-400">
-      <div className="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/feed" className="flex items-center gap-2.5">
+        <Link href="/dashboard" className="flex items-center gap-2.5 flex-shrink-0">
           <div className="w-8 h-8 rounded-lg bg-gold/10 border border-gold/30 flex items-center justify-center">
             <span className="text-gold text-xs font-bold">360</span>
           </div>
-          <span className="font-bold text-white text-lg">עומק 360</span>
+          <span className="font-bold text-white text-lg hidden sm:block">עומק 360</span>
         </Link>
 
         {/* Nav Links */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 overflow-x-auto">
           {navItems.map(({ href, icon: Icon, label }) => (
             <Link
               key={href}
               href={href}
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm transition-colors ${
+              className={`flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-sm transition-colors whitespace-nowrap ${
                 pathname === href || pathname.startsWith(href + "/")
                   ? "bg-gold/10 text-gold"
                   : "text-gray-400 hover:text-white hover:bg-dark-300"
               }`}
             >
               <Icon size={16} />
-              <span className="hidden sm:inline">{label}</span>
+              <span className="hidden md:inline">{label}</span>
             </Link>
           ))}
 

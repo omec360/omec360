@@ -45,7 +45,7 @@ export async function middleware(request: NextRequest) {
     }
 
     if (user && pathname === "/login") {
-      return NextResponse.redirect(new URL("/feed", request.url));
+      return NextResponse.redirect(new URL("/dashboard", request.url));
     }
   } catch {
     // On error, redirect to login if not already there

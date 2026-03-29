@@ -1,6 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
-import { Users, FileText, Mail } from "lucide-react";
+import { Users, FileText, Mail, BookOpen } from "lucide-react";
 
 export default async function AdminDashboard() {
   const supabase = await createClient();
@@ -60,6 +60,18 @@ export default async function AdminDashboard() {
             <div>
               <h3 className="font-semibold text-white group-hover:text-gold transition-colors">ניהול תוכן</h3>
               <p className="text-gray-500 text-sm">צפה ומחק פוסטים</p>
+            </div>
+          </div>
+        </Link>
+
+        <Link href="/admin/articles" className="card hover:border-gold/30 transition-colors group">
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center">
+              <BookOpen className="text-green-400" size={20} />
+            </div>
+            <div>
+              <h3 className="font-semibold text-white group-hover:text-gold transition-colors">מרכז ידע</h3>
+              <p className="text-gray-500 text-sm">פרסם מאמרים והשראה</p>
             </div>
           </div>
         </Link>
