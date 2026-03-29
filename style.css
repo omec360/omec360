@@ -1,8 +1,8 @@
 /* ===== BASE ===== */
 body {
     font-family: 'Assistant', sans-serif;
-    background-color: #0a1628;
-    color: #f5f4fa;
+    background-color: #faf8f3;
+    color: #1a1a2e;
     scroll-behavior: smooth;
     letter-spacing: 0.02em;
     line-height: 1.6;
@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== GRADIENT ===== */
 .gradient-text {
-    background: linear-gradient(to right, #f4c025, #ffffff);
+    background: linear-gradient(to right, #f4c025, #1a1a2e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -50,15 +50,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== CARDS ===== */
 .card-blur {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.13);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
 }
 
 .card-blur:hover {
     border-color: #f4c025;
-    background: rgba(255, 255, 255, 0.10);
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(244, 192, 37, 0.15);
     transform: translateY(-4px);
 }
 
@@ -74,6 +75,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== NAV ACTIVE ===== */
+/* Force nav links dark on light nav */
+header .nav-link {
+    color: #1a1a2e;
+}
+
 .nav-link {
     position: relative;
     transition: color 0.2s;
