@@ -1,8 +1,8 @@
 /* ===== BASE ===== */
 body {
     font-family: 'Assistant', sans-serif;
-    background-color: #0e1019;
-    color: #f0eff5;
+    background-color: #161929;
+    color: #f5f4fa;
     scroll-behavior: smooth;
     letter-spacing: 0.02em;
     line-height: 1.6;
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== HERO ===== */
 .hero-section {
-    background: linear-gradient(rgba(14, 16, 25, 0.55), rgba(14, 16, 25, 0.88)),
+    background: linear-gradient(rgba(22, 25, 41, 0.50), rgba(22, 25, 41, 0.85)),
         url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
@@ -50,15 +50,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== CARDS ===== */
 .card-blur {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.13);
     transition: all 0.3s ease;
 }
 
 .card-blur:hover {
     border-color: #f4c025;
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.10);
     transform: translateY(-4px);
 }
 
