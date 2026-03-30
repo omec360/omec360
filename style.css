@@ -48,10 +48,16 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 60vh;
 }
 
+/* ===== PALETTE SILVER OVERRIDES ===== */
+/* Make slate-silver colors from palette visible throughout */
+body .text-gray-400 { color: #B8BFC1; }
+body .text-gray-500 { color: #8fa4b0; }
+body .text-gray-300 { color: #d4d9dc; }
+
 /* ===== CARDS ===== */
 .card-blur {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(184, 191, 193, 0.2);
+    background: rgba(108, 132, 148, 0.18);
+    border: 1px solid rgba(184, 191, 193, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -71,6 +77,12 @@ h1, h2, h3, h4, h5, h6 {
     0%   { transform: scale(1);    box-shadow: 0 0 0 0   rgba(243, 227, 8, 0.4); }
     70%  { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(243, 227, 8, 0); }
     100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(243, 227, 8, 0); }
+}
+
+/* ===== LOGO ===== */
+/* Remove black box from logo on teal background */
+header img {
+    mix-blend-mode: screen;
 }
 
 /* ===== NAV ACTIVE ===== */
@@ -138,6 +150,9 @@ header .nav-link {
 }
 
 /* ===== FOOTER ===== */
+footer {
+    background-color: #152838 !important;
+}
 footer a:hover {
     color: #F3E308;
 }
