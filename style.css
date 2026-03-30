@@ -81,7 +81,8 @@ body .text-gray-300 { color: #d4d9dc; }
 
 /* ===== LOGO ===== */
 /* Remove black box from logo on teal background */
-header img {
+header img,
+footer img {
     mix-blend-mode: screen;
 }
 
