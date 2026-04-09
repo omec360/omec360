@@ -3,6 +3,8 @@ import Navbar from "@/components/Navbar";
 import { redirect } from "next/navigation";
 import { Profile } from "@/types";
 
+export const dynamic = "force-dynamic";
+
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   let supabase;
   try {
