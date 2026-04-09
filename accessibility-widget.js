@@ -38,9 +38,9 @@ function toggleA11yClass(cls) {
     if (btn) {
         const isActive = document.body.classList.contains(cls);
         btn.setAttribute('aria-pressed', String(isActive));
-        btn.style.background = isActive ? 'rgba(244,192,37,0.25)' : 'rgba(255,255,255,0.05)';
-        btn.style.borderColor = isActive ? '#f4c025' : 'rgba(255,255,255,0.1)';
-        btn.style.color = isActive ? '#f4c025' : '#e5e5e5';
+        btn.style.background = isActive ? 'rgba(119,90,25,0.15)' : 'rgba(255,255,255,0.05)';
+        btn.style.borderColor = isActive ? '#775a19' : 'rgba(255,255,255,0.1)';
+        btn.style.color = isActive ? '#dab36a' : '#e5e5e5';
     }
     saveA11yPrefs();
 }
@@ -125,7 +125,7 @@ function createA11yWidget() {
                 <div style="display:flex;align-items:center;gap:10px;">
                     <button onclick="changeFontSize(-2)" aria-label="הקטן טקסט"
                         style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#e5e5e5;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;">−</button>
-                    <span id="a11y-font-size-val" style="flex:1;text-align:center;font-weight:800;font-size:14px;color:#f4c025;">100%</span>
+                    <span id="a11y-font-size-val" style="flex:1;text-align:center;font-weight:800;font-size:14px;color:#dab36a;">100%</span>
                     <button onclick="changeFontSize(2)" aria-label="הגדל טקסט"
                         style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#e5e5e5;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;">+</button>
                 </div>
