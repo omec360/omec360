@@ -4,210 +4,252 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ניהול | O.M.E.C Studio</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{font-family:'Assistant',sans-serif}
-body{background:#0d1b2a;color:#f0f0f0;margin:0}
-.card{background:#1a2d3d;border:1px solid #2e4a5c;border-radius:16px;padding:24px;margin-bottom:16px}
-.inp{background:#0f2030;border:1px solid #2e4a5c;border-radius:8px;padding:10px 14px;color:#f0f0f0;width:100%;font-size:15px;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#0a1520;color:#f0f0f0;height:100vh;overflow:hidden;display:flex;flex-direction:column}
+
+/* Header */
+#topbar{background:#1a3040;border-bottom:1px solid #2e4a5c;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-shrink:0;z-index:100}
+#topbar h1{font-size:17px;font-weight:800;white-space:nowrap}
+.page-btns{display:flex;gap:4px;flex:1;justify-content:center}
+.page-btn{background:#0f2030;border:1px solid #2e4a5c;color:#8fa4b0;border-radius:6px;padding:6px 12px;cursor:pointer;font-size:13px;font-weight:600;white-space:nowrap}
+.page-btn.on{background:#F3E308;color:#000;border-color:#F3E308}
+.top-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+#saveBtn{background:#F3E308;color:#000;font-weight:800;border:none;border-radius:50px;padding:8px 22px;cursor:pointer;font-size:14px;white-space:nowrap}
+#saveBtn:hover{transform:scale(1.04)}
+#saveBtn:disabled{background:#5a5200;color:#888;cursor:not-allowed;transform:none}
+.logout-btn{background:transparent;color:#8fa4b0;border:1px solid #2e4a5c;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:13px}
+#statusDot{width:10px;height:10px;border-radius:50%;background:#22c55e;flex-shrink:0;display:none}
+
+/* Main layout */
+#main{display:flex;flex:1;overflow:hidden}
+
+/* Control panel */
+#panel{width:320px;flex-shrink:0;background:#0f1e2a;border-left:1px solid #1e3545;display:flex;flex-direction:column;overflow:hidden}
+#panel-tabs{display:flex;background:#0a1520;border-bottom:1px solid #1e3545;flex-shrink:0}
+.ptab{flex:1;background:transparent;border:none;color:#8fa4b0;padding:11px 4px;cursor:pointer;font-size:13px;font-weight:700;border-bottom:2px solid transparent}
+.ptab.on{color:#F3E308;border-bottom-color:#F3E308}
+#panel-content{flex:1;overflow-y:auto;padding:16px}
+#panel-content::-webkit-scrollbar{width:4px}
+#panel-content::-webkit-scrollbar-track{background:#0a1520}
+#panel-content::-webkit-scrollbar-thumb{background:#2e4a5c;border-radius:2px}
+
+/* Form elements */
+.field{margin-bottom:14px}
+.lbl{font-size:12px;color:#6C8494;margin-bottom:5px;display:block;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.inp{background:#0a1520;border:1px solid #2e4a5c;border-radius:7px;padding:9px 11px;color:#f0f0f0;width:100%;font-size:14px}
 .inp:focus{outline:none;border-color:#F3E308}
-textarea.inp{min-height:80px;resize:vertical}
-.btn-y{background:#F3E308;color:#000;font-weight:800;border:none;border-radius:50px;cursor:pointer;font-family:'Assistant',sans-serif;transition:transform .1s}
-.btn-y:hover{transform:scale(1.04)}
-.btn-o{background:transparent;color:#B8BFC1;border:1px solid #2e4a5c;border-radius:8px;cursor:pointer;font-family:'Assistant',sans-serif;padding:10px 18px;font-size:14px}
-.tab{background:transparent;color:#8fa4b0;border:none;cursor:pointer;padding:10px 20px;border-radius:8px;font-weight:700;font-size:15px;font-family:'Assistant',sans-serif}
-.tab.on{background:#F3E308;color:#000}
-.lbl{font-size:13px;color:#8fa4b0;margin-bottom:6px;display:block}
-input[type=color]{width:46px;height:40px;border:2px solid #2e4a5c;border-radius:8px;padding:2px;cursor:pointer;background:none}
-.crow{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid #1e3545}
+textarea.inp{min-height:70px;resize:vertical;font-size:13px;line-height:1.5}
+.sec{font-size:14px;font-weight:800;color:#F3E308;margin:16px 0 10px;padding-bottom:6px;border-bottom:1px solid #1e3545}
+.sec:first-child{margin-top:0}
+
+/* Color row */
+.crow{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #0d1b26}
 .crow:last-child{border-bottom:none}
-.crow-info{flex:1}
-.crow-title{font-weight:700;font-size:15px}
-.crow-desc{font-size:12px;color:#6C8494;margin-top:2px}
-.toast{position:fixed;bottom:24px;left:24px;padding:14px 22px;border-radius:12px;font-weight:700;z-index:9999;font-size:15px;max-width:320px;display:none;line-height:1.4}
-.sec-title{font-size:20px;font-weight:800;margin-bottom:18px;color:#F3E308}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.preview-bar{height:44px;border-radius:10px;display:flex;overflow:hidden;border:1px solid #2e4a5c;margin-top:10px}
-.prev-seg{flex:1;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;transition:background .2s}
+input[type=color]{width:42px;height:34px;border:2px solid #2e4a5c;border-radius:6px;padding:2px;cursor:pointer;background:none;flex-shrink:0}
+.crow-info{flex:1;min-width:0}
+.crow-name{font-size:13px;font-weight:600}
+.crow-desc{font-size:11px;color:#6C8494;margin-top:1px}
+.color-val{font-size:11px;color:#4a6a7c;font-family:monospace}
+
+/* Preview area */
+#preview-wrap{flex:1;display:flex;flex-direction:column;background:#1a2d3d;overflow:hidden;position:relative}
+#preview-bar{background:#0f1e2a;border-bottom:1px solid #1e3545;padding:6px 12px;display:flex;align-items:center;gap:8px;font-size:12px;color:#6C8494;flex-shrink:0}
+#preview-bar span{font-weight:600}
+#preview-loading{position:absolute;inset:0;background:rgba(10,21,32,0.7);display:none;align-items:center;justify-content:center;z-index:10;font-size:15px;color:#60a5fa}
+iframe#preview{flex:1;border:none;width:100%;height:100%;background:#fff}
+
+/* Login */
+#loginPage{position:fixed;inset:0;background:#0a1520;display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}
+.login-box{background:#0f1e2a;border:1px solid #2e4a5c;border-radius:16px;padding:32px;width:100%;max-width:400px}
+.login-box h2{font-size:26px;font-weight:800;text-align:center;margin-bottom:6px}
+.login-box p{color:#6C8494;text-align:center;font-size:13px;margin-bottom:24px}
+.login-box .lbl{font-size:12px;color:#8fa4b0;margin-bottom:5px;display:block}
+.login-box .inp{margin-bottom:14px}
+#loginBtn{background:#F3E308;color:#000;font-weight:800;border:none;border-radius:50px;padding:13px;width:100%;cursor:pointer;font-size:16px;margin-top:4px}
+#loginBtn:hover{transform:scale(1.02)}
+#loginErr{color:#f87171;text-align:center;font-size:13px;margin-top:10px;display:none}
+.tok-help{font-size:11px;color:#4a6a7c;margin-top:5px;line-height:1.5}
+
+/* Toast */
+#toast{position:fixed;bottom:20px;right:20px;padding:12px 18px;border-radius:10px;font-weight:700;z-index:9999;font-size:14px;display:none;max-width:300px;line-height:1.4}
+
+/* Palette preview */
+#palette-preview{display:flex;height:32px;border-radius:7px;overflow:hidden;margin-top:10px;border:1px solid #1e3545}
+.pp-seg{flex:1;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;transition:background .2s}
 </style>
 </head>
 <body>
 
-<!-- ====== LOGIN ====== -->
-<div id="loginPage" style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px">
-  <div style="max-width:440px;width:100%">
-    <div style="text-align:center;margin-bottom:32px">
-      <div style="font-size:56px;margin-bottom:8px">🔐</div>
-      <h1 style="font-size:32px;font-weight:800;margin:0 0 8px">כניסת מנהל</h1>
-      <p style="color:#8fa4b0;margin:0">O.M.E.C Studio – ניהול אתר</p>
-    </div>
-    <div class="card">
-      <div style="margin-bottom:16px">
-        <label class="lbl">סיסמת מנהל</label>
-        <input type="password" id="pw" class="inp" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
-      </div>
-      <div style="margin-bottom:22px">
-        <label class="lbl">GitHub Token <span style="font-size:11px;color:#4a6a7c;font-weight:400">(נשמר בדפדפן שלך בלבד, לא נשלח לשום מקום)</span></label>
-        <input type="password" id="tok" class="inp" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
-        <p style="font-size:12px;color:#4a6a7c;margin-top:6px;line-height:1.6">
-          איך מקבלים? GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token → סמן <b style="color:#B8BFC1">repo</b> ← זה הכל
-        </p>
-      </div>
-      <button onclick="doLogin()" class="btn-y" style="width:100%;padding:15px;font-size:17px">כניסה לניהול</button>
-      <p id="loginErr" style="color:#f87171;text-align:center;margin-top:12px;display:none;font-size:14px">❌ סיסמה שגויה</p>
-    </div>
+<!-- LOGIN -->
+<div id="loginPage">
+  <div class="login-box">
+    <div style="font-size:44px;text-align:center;margin-bottom:12px">🔐</div>
+    <h2>כניסת מנהל</h2>
+    <p>O.M.E.C Studio</p>
+    <label class="lbl">סיסמה</label>
+    <input type="password" id="pw" class="inp" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
+    <label class="lbl">GitHub Token <span style="color:#4a6a7c;font-weight:400">(נשמר בדפדפן שלך)</span></label>
+    <input type="password" id="tok" class="inp" placeholder="ghp_...">
+    <p class="tok-help">GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate → סמן <b style="color:#B8BFC1">repo</b></p>
+    <button id="loginBtn" onclick="doLogin()">כניסה לניהול</button>
+    <p id="loginErr">❌ סיסמה שגויה</p>
   </div>
 </div>
 
-<!-- ====== ADMIN ====== -->
-<div id="adminPage" style="display:none">
+<!-- TOPBAR -->
+<div id="topbar">
+  <h1>⚙️ עומק Admin</h1>
+  <div class="page-btns">
+    <button class="page-btn on" onclick="setPage('index.html',this)">🏠 בית</button>
+    <button class="page-btn" onclick="setPage('programs.html',this)">📋 תוכניות</button>
+    <button class="page-btn" onclick="setPage('about.html',this)">👥 אודות</button>
+    <button class="page-btn" onclick="setPage('contact.html',this)">📞 קשר</button>
+  </div>
+  <div class="top-actions">
+    <div id="statusDot"></div>
+    <span id="statusTxt" style="font-size:13px;color:#60a5fa;display:none">טוען...</span>
+    <button id="saveBtn" onclick="saveAll()" disabled>💾 שמור ופרסם</button>
+    <button class="logout-btn" onclick="doLogout()">יציאה</button>
+  </div>
+</div>
 
-  <!-- Header -->
-  <header style="background:#1a3040;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:50;padding:14px 28px;display:flex;align-items:center;justify-content:space-between">
-    <span style="font-size:20px;font-weight:800">⚙️ ניהול אתר עומק</span>
-    <div style="display:flex;gap:10px;align-items:center">
-      <span id="savingMsg" style="color:#60a5fa;font-size:14px;display:none">⏳ שומר...</span>
-      <button onclick="saveAll()" class="btn-y" style="padding:11px 28px;font-size:15px">💾 שמור ופרסם</button>
-      <button onclick="doLogout()" class="btn-o">יציאה</button>
+<!-- MAIN -->
+<div id="main">
+
+  <!-- PREVIEW -->
+  <div id="preview-wrap">
+    <div id="preview-bar">
+      <span>👁 תצוגה מקדימה חיה</span>
+      <span style="color:#3d5a6a">|</span>
+      <span id="previewPageName" style="color:#8fa4b0">index.html</span>
+      <span style="margin-right:auto;color:#4a6a7c;font-size:11px">שינויים מוצגים כאן לפני פרסום</span>
     </div>
-  </header>
-
-  <!-- Tabs -->
-  <div style="background:#152838;padding:10px 28px;display:flex;gap:4px;border-bottom:1px solid rgba(255,255,255,0.06)">
-    <button class="tab on" id="tb-colors" onclick="goTab('colors')">🎨 צבעים</button>
-    <button class="tab" id="tb-hero" onclick="goTab('hero')">🏠 כותרות</button>
-    <button class="tab" id="tb-stats" onclick="goTab('stats')">📊 נתונים</button>
-    <button class="tab" id="tb-contact" onclick="goTab('contact')">📞 קשר</button>
+    <div id="preview-loading">⏳ מעדכן תצוגה...</div>
+    <iframe id="preview" src="about:blank" sandbox="allow-scripts allow-same-origin"></iframe>
   </div>
 
-  <!-- Content -->
-  <div style="max-width:720px;margin:0 auto;padding:32px 24px">
-
-    <!-- ===== COLORS ===== -->
-    <div id="pnl-colors">
-      <div class="sec-title">פלטת הצבעים</div>
-      <div class="card">
-        <div class="crow">
-          <input type="color" id="c-mainbg" value="#2C4C5C">
-          <div class="crow-info">
-            <div class="crow-title">רקע ראשי</div>
-            <div class="crow-desc">הצבע של רוב חלקי האתר</div>
-          </div>
-        </div>
-        <div class="crow">
-          <input type="color" id="c-altbg" value="#3d5a6a">
-          <div class="crow-info">
-            <div class="crow-title">רקע סקציות משניות</div>
-            <div class="crow-desc">פסים שקצת שונים בגוון מהרקע הראשי</div>
-          </div>
-        </div>
-        <div class="crow">
-          <input type="color" id="c-nav" value="#1a3040">
-          <div class="crow-info">
-            <div class="crow-title">פס הניווט העליון</div>
-            <div class="crow-desc">הסרגל הכהה בראש כל עמוד</div>
-          </div>
-        </div>
-        <div class="crow">
-          <input type="color" id="c-footer" value="#152838">
-          <div class="crow-info">
-            <div class="crow-title">פוטר תחתון</div>
-            <div class="crow-desc">אזור הקישורים בתחתית האתר</div>
-          </div>
-        </div>
-        <div class="crow">
-          <input type="color" id="c-gold" value="#F3E308">
-          <div class="crow-info">
-            <div class="crow-title">צבע הדגשה (כפתורים ודגשים)</div>
-            <div class="crow-desc">הצבע הבולט בכפתורים, קישורים וכותרות</div>
-          </div>
-        </div>
-      </div>
-      <div class="lbl" style="margin-top:4px">תצוגה מקדימה</div>
-      <div class="preview-bar">
-        <div id="prev-nav" class="prev-seg" style="background:#1a3040;max-width:80px;color:#fff">ניווט</div>
-        <div id="prev-main" class="prev-seg" style="background:#2C4C5C;color:#fff">רקע ראשי</div>
-        <div id="prev-alt" class="prev-seg" style="background:#3d5a6a;color:#fff">שניוני</div>
-        <div id="prev-gold" class="prev-seg" style="background:#F3E308;max-width:80px;color:#000">כפתור</div>
-        <div id="prev-footer" class="prev-seg" style="background:#152838;max-width:80px;color:#fff">פוטר</div>
-      </div>
-      <p style="color:#4a6a7c;font-size:13px;margin-top:14px">שינוי הצבעים ישפיע על כל עמודי האתר. לאחר שמירה האתר יתעדכן תוך 2-3 דקות.</p>
+  <!-- CONTROL PANEL -->
+  <div id="panel">
+    <div id="panel-tabs">
+      <button class="ptab on" onclick="goTab('colors',this)">🎨 צבעים</button>
+      <button class="ptab" onclick="goTab('texts',this)">✏️ טקסטים</button>
+      <button class="ptab" onclick="goTab('contact',this)">📞 קשר</button>
     </div>
+    <div id="panel-content">
 
-    <!-- ===== HERO ===== -->
-    <div id="pnl-hero" style="display:none">
-      <div class="sec-title">כותרות דף הבית</div>
-      <div class="card">
-        <div style="margin-bottom:16px">
-          <label class="lbl">תגית הזהב (השורה הקצרה הצהובה מתחת לשם)</label>
-          <input type="text" id="hero-tagline" class="inp" placeholder="חינוך. יצירה. השפעה.">
+      <!-- COLORS -->
+      <div id="tab-colors">
+        <div class="sec">פלטת צבעים</div>
+        <div class="crow">
+          <input type="color" id="c-mainbg" value="#2C4C5C" oninput="onColorChange('mainbg',this)">
+          <div class="crow-info">
+            <div class="crow-name">רקע ראשי</div>
+            <div class="crow-desc">רוב האתר</div>
+          </div>
+          <span class="color-val" id="cv-mainbg">#2C4C5C</span>
         </div>
-        <div>
+        <div class="crow">
+          <input type="color" id="c-altbg" value="#3d5a6a" oninput="onColorChange('altbg',this)">
+          <div class="crow-info">
+            <div class="crow-name">רקע שניוני</div>
+            <div class="crow-desc">פסים חלופיים</div>
+          </div>
+          <span class="color-val" id="cv-altbg">#3d5a6a</span>
+        </div>
+        <div class="crow">
+          <input type="color" id="c-nav" value="#1a3040" oninput="onColorChange('nav',this)">
+          <div class="crow-info">
+            <div class="crow-name">ניווט עליון</div>
+            <div class="crow-desc">הסרגל הכהה</div>
+          </div>
+          <span class="color-val" id="cv-nav">#1a3040</span>
+        </div>
+        <div class="crow">
+          <input type="color" id="c-footer" value="#152838" oninput="onColorChange('footer',this)">
+          <div class="crow-info">
+            <div class="crow-name">פוטר תחתון</div>
+            <div class="crow-desc">תחתית האתר</div>
+          </div>
+          <span class="color-val" id="cv-footer">#152838</span>
+        </div>
+        <div class="crow">
+          <input type="color" id="c-gold" value="#F3E308" oninput="onColorChange('gold',this)">
+          <div class="crow-info">
+            <div class="crow-name">צבע הדגשה</div>
+            <div class="crow-desc">כפתורים ודגשים</div>
+          </div>
+          <span class="color-val" id="cv-gold">#F3E308</span>
+        </div>
+        <div id="palette-preview">
+          <div class="pp-seg" id="pp-nav" style="background:#1a3040;color:#fff;max-width:50px">נב׳</div>
+          <div class="pp-seg" id="pp-main" style="background:#2C4C5C;color:#fff">רקע</div>
+          <div class="pp-seg" id="pp-alt" style="background:#3d5a6a;color:#fff">שניוני</div>
+          <div class="pp-seg" id="pp-gold" style="background:#F3E308;color:#000;max-width:50px">כפ׳</div>
+          <div class="pp-seg" id="pp-footer" style="background:#152838;color:#fff;max-width:50px">פוטר</div>
+        </div>
+        <p style="font-size:11px;color:#4a6a7c;margin-top:12px;line-height:1.5">שינויים מוצגים בתצוגה המקדימה מיד. הם יתפרסמו רק לאחר לחיצה על "שמור ופרסם".</p>
+      </div>
+
+      <!-- TEXTS -->
+      <div id="tab-texts" style="display:none">
+        <div class="sec">כותרות דף הבית</div>
+        <div class="field">
+          <label class="lbl">תגית הזהב (שורת הסלוגן)</label>
+          <input type="text" id="hero-tagline" class="inp" placeholder="חינוך. יצירה. השפעה." oninput="schedulePreview()">
+        </div>
+        <div class="field">
           <label class="lbl">פסקת תיאור</label>
-          <textarea id="hero-desc" class="inp" placeholder="אנחנו מאמינים שלכל תלמיד יש קול..."></textarea>
+          <textarea id="hero-desc" class="inp" oninput="schedulePreview()"></textarea>
         </div>
-      </div>
-    </div>
-
-    <!-- ===== STATS ===== -->
-    <div id="pnl-stats" style="display:none">
-      <div class="sec-title">פס הנתונים</div>
-      <div class="card">
-        <p style="color:#8fa4b0;font-size:13px;margin-bottom:18px">4 המספרים/ערכים שמופיעים בפס הסטטיסטיקות בדף הבית. לכל אחד: ערך (המספר הגדול) + תווית (הטקסט הקטן מתחת).</p>
-        <div class="stat-grid">
-          <div>
+        <div class="sec">פס הנתונים</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="field">
             <label class="lbl">ערך 1</label>
-            <input type="text" id="s1v" class="inp" placeholder="8+">
-            <label class="lbl" style="margin-top:8px">תווית 1</label>
-            <input type="text" id="s1l" class="inp" placeholder="תוכניות ייחודיות">
+            <input type="text" id="s1v" class="inp" placeholder="8+" oninput="schedulePreview()">
+            <input type="text" id="s1l" class="inp" placeholder="תוכניות ייחודיות" oninput="schedulePreview()" style="margin-top:5px">
           </div>
-          <div>
+          <div class="field">
             <label class="lbl">ערך 2</label>
-            <input type="text" id="s2v" class="inp" placeholder="10+">
-            <label class="lbl" style="margin-top:8px">תווית 2</label>
-            <input type="text" id="s2l" class="inp" placeholder="שנות ניסיון">
+            <input type="text" id="s2v" class="inp" placeholder="10+" oninput="schedulePreview()">
+            <input type="text" id="s2l" class="inp" placeholder="שנות ניסיון" oninput="schedulePreview()" style="margin-top:5px">
           </div>
-          <div>
+          <div class="field">
             <label class="lbl">ערך 3</label>
-            <input type="text" id="s3v" class="inp" placeholder='גפ"ן'>
-            <label class="lbl" style="margin-top:8px">תווית 3</label>
-            <input type="text" id="s3l" class="inp" placeholder="תוכנית מאושרת">
+            <input type="text" id="s3v" class="inp" placeholder='גפ"ן' oninput="schedulePreview()">
+            <input type="text" id="s3l" class="inp" placeholder="תוכנית מאושרת" oninput="schedulePreview()" style="margin-top:5px">
           </div>
-          <div>
+          <div class="field">
             <label class="lbl">ערך 4</label>
-            <input type="text" id="s4v" class="inp" placeholder="∞">
-            <label class="lbl" style="margin-top:8px">תווית 4</label>
-            <input type="text" id="s4l" class="inp" placeholder="כלים לחיים">
+            <input type="text" id="s4v" class="inp" placeholder="∞" oninput="schedulePreview()">
+            <input type="text" id="s4l" class="inp" placeholder="כלים לחיים" oninput="schedulePreview()" style="margin-top:5px">
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- ===== CONTACT ===== -->
-    <div id="pnl-contact" style="display:none">
-      <div class="sec-title">פרטי יצירת קשר</div>
-      <div class="card">
-        <div style="margin-bottom:16px">
-          <label class="lbl">מספר טלפון (מוצג כטקסט)</label>
-          <input type="text" id="ct-phone" class="inp" placeholder="054-987-8180">
+      <!-- CONTACT -->
+      <div id="tab-contact" style="display:none">
+        <div class="sec">פרטי התקשרות</div>
+        <div class="field">
+          <label class="lbl">טלפון מוצג</label>
+          <input type="text" id="ct-phone" class="inp" placeholder="054-987-8180" oninput="schedulePreview()">
         </div>
-        <div style="margin-bottom:16px">
-          <label class="lbl">מספר WhatsApp <span style="color:#4a6a7c;font-size:12px">(ספרות בלבד, כולל קידומת 972, ללא +)</span></label>
-          <input type="text" id="ct-wa" class="inp" placeholder="972549878180">
-          <p style="font-size:12px;color:#4a6a7c;margin-top:4px">שינוי זה יעדכן את כפתור הוואטסאפ בכל עמודי האתר</p>
+        <div class="field">
+          <label class="lbl">WhatsApp (ספרות בלבד, עם 972)</label>
+          <input type="text" id="ct-wa" class="inp" placeholder="972549878180" oninput="schedulePreview()">
+          <span style="font-size:11px;color:#4a6a7c">מתעדכן בכל עמודי האתר</span>
         </div>
-        <div>
-          <label class="lbl">כתובת אימייל</label>
-          <input type="text" id="ct-email" class="inp" placeholder="info@omec.co.il">
+        <div class="field">
+          <label class="lbl">אימייל</label>
+          <input type="text" id="ct-email" class="inp" placeholder="info@omec.co.il" oninput="schedulePreview()">
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
 
-<div id="toast" class="toast"></div>
+<div id="toast"></div>
 
 <script>
 const PASS = 'omec2026';
@@ -220,24 +262,21 @@ const ALL_HTML = [
 ];
 
 let token = '';
-let cache = {};
+let fileCache = {}; // { path: { content, sha } }
+let currentPage = 'index.html';
+let previewTimer = null;
+let currentBlobUrl = null;
+let hasChanges = false;
 let currColors = { mainBg:'#2C4C5C', altBg:'#3d5a6a', nav:'#1a3040', footer:'#152838', gold:'#F3E308' };
 
-/* ---- INIT ---- */
+/* ===== INIT ===== */
 window.onload = () => {
   const t = localStorage.getItem('omec_tok');
   if (t) { document.getElementById('tok').value = t; token = t; }
   if (localStorage.getItem('omec_auth') === '1' && t) enterAdmin();
-  // Live preview
-  [['c-mainbg','prev-main'],['c-altbg','prev-alt'],['c-nav','prev-nav'],
-   ['c-gold','prev-gold'],['c-footer','prev-footer']].forEach(([inp,prev]) => {
-    document.getElementById(inp).addEventListener('input', e =>
-      document.getElementById(prev).style.background = e.target.value
-    );
-  });
 };
 
-/* ---- AUTH ---- */
+/* ===== AUTH ===== */
 function doLogin() {
   if (document.getElementById('pw').value !== PASS) {
     document.getElementById('loginErr').style.display = 'block'; return;
@@ -250,23 +289,38 @@ function doLogin() {
 function doLogout() { localStorage.removeItem('omec_auth'); location.reload(); }
 function enterAdmin() {
   document.getElementById('loginPage').style.display = 'none';
-  document.getElementById('adminPage').style.display = 'block';
-  loadData();
+  loadAllFiles();
 }
 
-/* ---- TABS ---- */
-function goTab(name) {
-  ['colors','hero','stats','contact'].forEach(t => {
-    document.getElementById('pnl-'+t).style.display = 'none';
-    const b = document.getElementById('tb-'+t);
-    b.classList.remove('on'); b.style.background = ''; b.style.color = '';
+/* ===== TABS ===== */
+function goTab(name, btn) {
+  ['colors','texts','contact'].forEach(t => {
+    document.getElementById('tab-'+t).style.display = 'none';
+    document.querySelectorAll('.ptab').forEach(b => { b.classList.remove('on'); });
   });
-  document.getElementById('pnl-'+name).style.display = 'block';
-  const b = document.getElementById('tb-'+name);
-  b.classList.add('on'); b.style.background = '#F3E308'; b.style.color = '#000';
+  document.getElementById('tab-'+name).style.display = 'block';
+  btn.classList.add('on');
 }
 
-/* ---- TOAST ---- */
+/* ===== PAGE SWITCH ===== */
+function setPage(page, btn) {
+  document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  currentPage = page;
+  document.getElementById('previewPageName').textContent = page;
+  schedulePreview(0);
+}
+
+/* ===== STATUS ===== */
+function setStatus(msg, show=true) {
+  const txt = document.getElementById('statusTxt');
+  const dot = document.getElementById('statusDot');
+  txt.textContent = msg;
+  txt.style.display = show ? 'inline' : 'none';
+  dot.style.display = show ? 'none' : 'flex';
+}
+
+/* ===== TOAST ===== */
 function toast(msg, ok=true, ms=5000) {
   const el = document.getElementById('toast');
   el.innerHTML = msg;
@@ -278,7 +332,7 @@ function toast(msg, ok=true, ms=5000) {
   el._t = setTimeout(() => el.style.display='none', ms);
 }
 
-/* ---- GITHUB API ---- */
+/* ===== GITHUB API ===== */
 async function ghGet(path) {
   const r = await fetch(
     `https://api.github.com/repos/${REPO}/contents/${encodeURIComponent(path)}?ref=${BRANCH}&_=${Date.now()}`,
@@ -297,262 +351,353 @@ async function ghPut(path, content, sha, msg) {
       body: JSON.stringify({ message: msg, content: btoa(unescape(encodeURIComponent(content))), sha, branch: BRANCH })
     }
   );
-  if (!r.ok) { const e = await r.json(); throw new Error(e.message || `שגיאה בשמירת ${path}`); }
+  if (!r.ok) { const e = await r.json(); throw new Error(e.message || path); }
   return (await r.json()).content.sha;
 }
 
 function dec(b64) { return decodeURIComponent(escape(atob(b64.replace(/\n/g,'')))); }
 
-async function loadFile(path) {
-  if (cache[path]) return cache[path];
-  const f = await ghGet(path);
-  cache[path] = { content: dec(f.content), sha: f.sha };
-  return cache[path];
-}
+/* ===== LOAD ALL FILES ===== */
+async function loadAllFiles() {
+  if (!token) { setStatus('אין Token', true); return; }
+  setStatus('טוען קבצים...', true);
 
-/* ---- LOAD ---- */
-async function loadData() {
-  if (!token) return;
-  toast('⏳ טוען נתונים נוכחיים...', true, 30000);
   try {
-    // Load saved color state
+    // Load saved config first
     try {
-      const cfg = await loadFile('admin-config.json');
-      const parsed = JSON.parse(cfg.content);
-      if (parsed.colors) {
-        currColors = parsed.colors;
+      const cfgRaw = await ghGet('admin-config.json');
+      const cfg = JSON.parse(dec(cfgRaw.content));
+      if (cfg.colors) {
+        currColors = cfg.colors;
         document.getElementById('c-mainbg').value = currColors.mainBg;
         document.getElementById('c-altbg').value  = currColors.altBg;
         document.getElementById('c-nav').value    = currColors.nav;
         document.getElementById('c-footer').value = currColors.footer;
         document.getElementById('c-gold').value   = currColors.gold;
-        document.getElementById('prev-main').style.background   = currColors.mainBg;
-        document.getElementById('prev-alt').style.background    = currColors.altBg;
-        document.getElementById('prev-nav').style.background    = currColors.nav;
-        document.getElementById('prev-gold').style.background   = currColors.gold;
-        document.getElementById('prev-footer').style.background = currColors.footer;
+        updatePalettePreview();
       }
-    } catch(e) { /* first time - use defaults */ }
+      fileCache['admin-config.json'] = { content: dec(cfgRaw.content), sha: cfgRaw.sha };
+    } catch(e) { /* no config yet */ }
 
-    // Load index.html
-    const idx = await loadFile('index.html');
-    const html = idx.content;
+    // Load all HTML + CSS in parallel
+    const paths = [...ALL_HTML, 'style.css'];
+    const results = await Promise.allSettled(paths.map(p => ghGet(p)));
+    results.forEach((r, i) => {
+      if (r.status === 'fulfilled') {
+        fileCache[paths[i]] = { content: dec(r.value.content), sha: r.value.sha };
+      }
+    });
 
-    // Hero tagline (yellow italic line)
-    const tg = html.match(/tracking-\[0\.15em\] text-gold[^>]*>([^<]+)</);
-    if (tg) document.getElementById('hero-tagline').value = tg[1].trim();
+    // Populate text fields from index.html
+    populateTextFields();
 
-    // Hero description
-    const dsc = html.match(/text-gray-300 max-w-2xl mx-auto leading-relaxed">\s*([\s\S]+?)\s*<\/p>/);
-    if (dsc) document.getElementById('hero-desc').value = dsc[1].replace(/\s+/g,' ').trim();
-
-    // Stats (inside Stats Bar section)
-    const statsArea = html.match(/Stats Bar([\s\S]+?)Programs Preview/);
-    if (statsArea) {
-      const blocks = [...statsArea[1].matchAll(/text-4xl font-extrabold text-gold mb-1">([^<]+)<\/div>\s*<div[^>]+tracking-widest">([^<]+)<\/div>/g)];
-      [[0,'s1v','s1l'],[1,'s2v','s2l'],[2,'s3v','s3l'],[3,'s4v','s4l']].forEach(([i,v,l]) => {
-        if (blocks[i]) {
-          document.getElementById(v).value = blocks[i][1].trim();
-          document.getElementById(l).value = blocks[i][2].trim();
-        }
-      });
-    }
-
-    // Contact - WhatsApp
-    const wa = html.match(/wa\.me\/(\d+)/);
-    if (wa) document.getElementById('ct-wa').value = wa[1];
-
-    // Contact page - phone + email
-    try {
-      const con = await loadFile('contact.html');
-      const ph = con.content.match(/tel:([0-9\-+]+)/);
-      if (ph) document.getElementById('ct-phone').value = ph[1];
-      const em = con.content.match(/mailto:([^\s"<>]+)/);
-      if (em) document.getElementById('ct-email').value = em[1];
-    } catch(e) {}
-
-    toast('✅ נטען בהצלחה', true);
+    setStatus('', false);
+    document.getElementById('saveBtn').disabled = false;
+    schedulePreview(0);
+    toast('✅ נטען בהצלחה', true, 3000);
   } catch(e) {
-    toast('⚠️ שגיאה בטעינה: ' + e.message + '<br><small>בדוק שה-Token תקין ויש לו הרשאת repo</small>', false, 10000);
+    setStatus('שגיאה: ' + e.message, true);
+    toast('❌ ' + e.message + '<br><small>בדוק שה-Token תקין</small>', false, 10000);
   }
 }
 
-/* ---- SAVE ALL ---- */
-async function saveAll() {
-  if (!token) { toast('❌ יש להזין GitHub Token', false); return; }
-  document.getElementById('savingMsg').style.display = 'inline';
-  toast('⏳ שומר שינויים...', true, 60000);
-  try {
-    await saveColors();
-    await saveHero();
-    await saveStats();
-    await saveContact();
-    await saveConfig();
-    document.getElementById('savingMsg').style.display = 'none';
-    toast('✅ נשמר בהצלחה!<br><small>האתר יתעדכן תוך 2-3 דקות</small>', true);
-  } catch(e) {
-    document.getElementById('savingMsg').style.display = 'none';
-    toast('❌ שגיאה: ' + e.message, false, 10000);
+function populateTextFields() {
+  const idx = fileCache['index.html'];
+  if (!idx) return;
+  const html = idx.content;
+
+  const tg = html.match(/tracking-\[0\.15em\] text-gold[^>]*>([^<]+)</);
+  if (tg) document.getElementById('hero-tagline').value = tg[1].trim();
+
+  const dsc = html.match(/text-gray-300 max-w-2xl mx-auto leading-relaxed">\s*([\s\S]+?)\s*<\/p>/);
+  if (dsc) document.getElementById('hero-desc').value = dsc[1].replace(/\s+/g,' ').trim();
+
+  const statsArea = html.match(/Stats Bar([\s\S]+?)Programs Preview/);
+  if (statsArea) {
+    const blocks = [...statsArea[1].matchAll(/text-4xl font-extrabold text-gold mb-1">([^<]+)<\/div>\s*<div[^>]+tracking-widest">([^<]+)<\/div>/g)];
+    [[0,'s1v','s1l'],[1,'s2v','s2l'],[2,'s3v','s3l'],[3,'s4v','s4l']].forEach(([i,v,l]) => {
+      if (blocks[i]) {
+        document.getElementById(v).value = blocks[i][1].trim();
+        document.getElementById(l).value = blocks[i][2].trim();
+      }
+    });
+  }
+
+  const wa = html.match(/wa\.me\/(\d+)/);
+  if (wa) document.getElementById('ct-wa').value = wa[1];
+
+  const con = fileCache['contact.html'];
+  if (con) {
+    const ph = con.content.match(/tel:([0-9\-+]+)/);
+    if (ph) document.getElementById('ct-phone').value = ph[1];
+    const em = con.content.match(/mailto:([^\s"<>]+)/);
+    if (em) document.getElementById('ct-email').value = em[1];
   }
 }
 
-/* ---- SAVE COLORS ---- */
-async function saveColors() {
-  const newC = {
+/* ===== COLOR CHANGE HANDLER ===== */
+function onColorChange(id, el) {
+  document.getElementById('cv-'+id).textContent = el.value;
+  updatePalettePreview();
+  schedulePreview();
+  hasChanges = true;
+}
+
+function updatePalettePreview() {
+  const ids = {nav:'c-nav',main:'c-mainbg',alt:'c-altbg',gold:'c-gold',footer:'c-footer'};
+  const txtColors = {nav:'#fff',main:'#fff',alt:'#fff',gold:'#000',footer:'#fff'};
+  Object.keys(ids).forEach(k => {
+    const seg = document.getElementById('pp-'+k);
+    const val = document.getElementById(ids[k]).value;
+    seg.style.background = val;
+    seg.style.color = txtColors[k];
+  });
+}
+
+/* ===== PREVIEW ENGINE ===== */
+function schedulePreview(delay=350) {
+  hasChanges = true;
+  clearTimeout(previewTimer);
+  previewTimer = setTimeout(buildPreview, delay);
+}
+
+function buildPreview() {
+  const page = currentPage;
+  const cached = fileCache[page];
+  const cssCached = fileCache['style.css'];
+  if (!cached || !cssCached) return;
+
+  document.getElementById('preview-loading').style.display = 'flex';
+
+  const colors = {
     mainBg: document.getElementById('c-mainbg').value,
     altBg:  document.getElementById('c-altbg').value,
     nav:    document.getElementById('c-nav').value,
     footer: document.getElementById('c-footer').value,
     gold:   document.getElementById('c-gold').value,
   };
-  const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 
-  // Update style.css
-  const cssF = await loadFile('style.css');
-  let css = cssF.content;
-  css = css.replace(new RegExp(`background-color: ${esc(currColors.mainBg)}`, 'gi'), `background-color: ${newC.mainBg}`);
-  css = css.replace(new RegExp(esc(currColors.gold), 'g'), newC.gold);
-  css = css.replace(new RegExp(esc(currColors.footer), 'g'), newC.footer);
-  const newCssSha = await ghPut('style.css', css, cssF.sha, 'Admin: עדכון צבעים');
-  cache['style.css'] = { content: css, sha: newCssSha };
+  // Apply color changes to CSS
+  let css = cssCached.content;
+  css = css.replace(new RegExp(`background-color: ${esc(currColors.mainBg)}`, 'gi'), `background-color: ${colors.mainBg}`);
+  css = css.replace(new RegExp(esc(currColors.gold), 'g'), colors.gold);
+  css = css.replace(new RegExp(esc(currColors.footer), 'g'), colors.footer);
 
-  // Update all HTML files
-  for (const fname of ALL_HTML) {
-    try {
-      const f = await loadFile(fname);
-      let html = f.content;
-      const orig = html;
-      html = html.replace(new RegExp(`bg-\\[${esc(currColors.mainBg)}\\]`, 'g'), `bg-[${newC.mainBg}]`);
-      html = html.replace(new RegExp(`bg-\\[${esc(currColors.altBg)}\\]`, 'g'),  `bg-[${newC.altBg}]`);
-      html = html.replace(new RegExp(`bg-\\[${esc(currColors.nav)}\\]\\/95`, 'g'),`bg-[${newC.nav}]/95`);
-      html = html.replace(new RegExp(`bg-\\[${esc(currColors.nav)}\\]`, 'g'),    `bg-[${newC.nav}]`);
-      html = html.replace(new RegExp(`bg-\\[${esc(currColors.footer)}\\]`, 'g'), `bg-[${newC.footer}]`);
-      html = html.replace(new RegExp(esc(currColors.nav), 'g'),  newC.nav);
-      html = html.replace(new RegExp(esc(currColors.gold), 'g'), newC.gold);
-      if (html !== orig) {
-        const newSha = await ghPut(fname, html, f.sha, `Admin: עדכון צבעים`);
-        cache[fname] = { content: html, sha: newSha };
+  // Apply to HTML
+  let html = cached.content;
+  const oe = esc;
+  html = html.replace(new RegExp(`bg-\\[${oe(currColors.mainBg)}\\]`,'g'), `bg-[${colors.mainBg}]`);
+  html = html.replace(new RegExp(`bg-\\[${oe(currColors.altBg)}\\]`,'g'),  `bg-[${colors.altBg}]`);
+  html = html.replace(new RegExp(`bg-\\[${oe(currColors.nav)}\\]\\/95`,'g'),`bg-[${colors.nav}]/95`);
+  html = html.replace(new RegExp(`bg-\\[${oe(currColors.nav)}\\]`,'g'),    `bg-[${colors.nav}]`);
+  html = html.replace(new RegExp(`bg-\\[${oe(currColors.footer)}\\]`,'g'), `bg-[${colors.footer}]`);
+  html = html.replace(new RegExp(oe(currColors.nav),'g'),  colors.nav);
+  html = html.replace(new RegExp(oe(currColors.gold),'g'), colors.gold);
+
+  // Apply text changes (only index.html)
+  if (page === 'index.html') {
+    const tagline = document.getElementById('hero-tagline').value.trim();
+    const desc    = document.getElementById('hero-desc').value.trim();
+    if (tagline) html = html.replace(/(tracking-\[0\.15em\] text-gold[^>]*>)[^<]+(<)/, `$1${tagline}$2`);
+    if (desc) html = html.replace(/(text-gray-300 max-w-2xl mx-auto leading-relaxed">\s*)[\s\S]+?(\s*<\/p>)/, `$1${desc}$2`);
+
+    // Stats
+    let count = 0;
+    const vals = [
+      [document.getElementById('s1v').value, document.getElementById('s1l').value],
+      [document.getElementById('s2v').value, document.getElementById('s2l').value],
+      [document.getElementById('s3v').value, document.getElementById('s3l').value],
+      [document.getElementById('s4v').value, document.getElementById('s4l').value],
+    ];
+    html = html.replace(/(text-4xl font-extrabold text-gold mb-1">)[^<]+(<\/div>\s*<div[^>]+tracking-widest">)[^<]+(<\/div>)/g,
+      (match, p1, p2, p3) => {
+        const [v, l] = vals[count] || ['',''];
+        const cv = match.match(/mb-1">([^<]+)</)?.[1] || '';
+        const cl = match.match(/tracking-widest">([^<]+)<\/div>/)?.[1] || '';
+        count++;
+        return `${p1}${v||cv}${p2}${l||cl}${p3}`;
       }
-    } catch(e) { console.warn(fname, e.message); }
-  }
-  currColors = { ...newC };
-}
-
-/* ---- SAVE HERO ---- */
-async function saveHero() {
-  const tagline = document.getElementById('hero-tagline').value.trim();
-  const desc    = document.getElementById('hero-desc').value.trim();
-  if (!tagline && !desc) return;
-
-  const f = await loadFile('index.html');
-  let html = f.content;
-  const orig = html;
-
-  if (tagline) {
-    html = html.replace(
-      /(tracking-\[0\.15em\] text-gold[^>]*>)[^<]+(<)/,
-      `$1${tagline}$2`
     );
   }
-  if (desc) {
-    html = html.replace(
-      /(class="text-lg md:text-2xl font-light mb-10 text-gray-300 max-w-2xl mx-auto leading-relaxed">\s*)[\s\S]+?(\s*<\/p>)/,
-      `$1\n                ${desc}\n            $2`
-    );
-  }
-  if (html !== orig) {
-    const newSha = await ghPut('index.html', html, f.sha, 'Admin: עדכון כותרות דף הבית');
-    cache['index.html'] = { content: html, sha: newSha };
-  }
-}
 
-/* ---- SAVE STATS ---- */
-async function saveStats() {
-  const vals = [
-    [document.getElementById('s1v').value.trim(), document.getElementById('s1l').value.trim()],
-    [document.getElementById('s2v').value.trim(), document.getElementById('s2l').value.trim()],
-    [document.getElementById('s3v').value.trim(), document.getElementById('s3l').value.trim()],
-    [document.getElementById('s4v').value.trim(), document.getElementById('s4l').value.trim()],
-  ];
-  if (vals.every(([v,l]) => !v && !l)) return;
+  // Apply WA to all pages (preview)
+  const wa = document.getElementById('ct-wa').value.trim();
+  if (wa) html = html.replace(/wa\.me\/\d+/g, `wa.me/${wa}`);
 
-  const f = await loadFile('index.html');
-  let html = f.content;
-  const orig = html;
-  let count = 0;
-
-  html = html.replace(
-    /(text-4xl font-extrabold text-gold mb-1">)[^<]+(<\/div>\s*<div[^>]+tracking-widest">)[^<]+(<\/div>)/g,
-    (match, p1, p2, p3) => {
-      const [v, l] = vals[count] || ['',''];
-      count++;
-      const curV = match.match(/mb-1">([^<]+)</)?.[1] || '';
-      const curL = match.match(/tracking-widest">([^<]+)<\/div>/)?.[1] || '';
-      return `${p1}${v || curV}${p2}${l || curL}${p3}`;
-    }
-  );
-
-  if (html !== orig) {
-    const newSha = await ghPut('index.html', html, f.sha, 'Admin: עדכון נתונים');
-    cache['index.html'] = { content: html, sha: newSha };
-  }
-}
-
-/* ---- SAVE CONTACT ---- */
-async function saveContact() {
-  const phone = document.getElementById('ct-phone').value.trim();
-  const wa    = document.getElementById('ct-wa').value.trim();
-  const email = document.getElementById('ct-email').value.trim();
-  if (!phone && !wa && !email) return;
-
-  // WhatsApp in all pages
-  if (wa) {
-    for (const fname of ALL_HTML) {
-      try {
-        const f = await loadFile(fname);
-        const orig = f.content;
-        const html = orig.replace(/wa\.me\/\d+/g, `wa.me/${wa}`);
-        if (html !== orig) {
-          const newSha = await ghPut(fname, html, f.sha, `Admin: עדכון WhatsApp`);
-          cache[fname] = { content: html, sha: newSha };
-        }
-      } catch(e) { console.warn(fname, e.message); }
-    }
-  }
-
-  // Phone + email in contact.html
-  if (phone || email) {
-    const f = await loadFile('contact.html');
-    let html = f.content;
-    const orig = html;
+  // Fix phone display in contact page
+  if (page === 'contact.html') {
+    const phone = document.getElementById('ct-phone').value.trim();
+    const email = document.getElementById('ct-email').value.trim();
     if (phone) html = html.replace(/tel:[0-9\-+]+/g, `tel:${phone}`);
     if (email) html = html.replace(/mailto:[^\s"<>]+/g, `mailto:${email}`);
-    if (html !== orig) {
-      const newSha = await ghPut('contact.html', html, f.sha, 'Admin: עדכון פרטי קשר');
-      cache['contact.html'] = { content: html, sha: newSha };
-    }
   }
+
+  // Inline CSS (replace link tag)
+  html = html.replace('<link rel="stylesheet" href="style.css">', `<style>${css}</style>`);
+
+  // Fix asset paths for preview
+  const base = window.location.href.replace(/\/[^/]*$/, '');
+  html = html.replace(/src="assets\//g, `src="${base}/assets/`);
+  html = html.replace(/src="chat-widget.js"/g, `src="${base}/chat-widget.js"`);
+  html = html.replace(/src="accessibility-widget.js"/g, `src="${base}/accessibility-widget.js"`);
+
+  // Disable navigation links in preview (prevent leaving the iframe)
+  html = html.replace(/<a /g, '<a data-preview="true" ');
+  html = html.replace(/<\/body>/, `<script>
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a[data-preview]');
+      if(a&&a.href&&!a.href.startsWith('mailto')&&!a.href.startsWith('tel')&&!a.href.includes('wa.me')){
+        e.preventDefault();
+        parent.postMessage({navigateTo:a.getAttribute('href')},'*');
+      }
+    });
+  <\/script></body>`);
+
+  // Build blob
+  if (currentBlobUrl) URL.revokeObjectURL(currentBlobUrl);
+  const blob = new Blob([html], { type: 'text/html' });
+  currentBlobUrl = URL.createObjectURL(blob);
+
+  const iframe = document.getElementById('preview');
+  iframe.onload = () => { document.getElementById('preview-loading').style.display='none'; };
+  iframe.src = currentBlobUrl;
 }
 
-/* ---- SAVE CONFIG ---- */
-async function saveConfig() {
-  const config = { colors: currColors, lastSaved: new Date().toISOString() };
-  const body = JSON.stringify(config, null, 2);
+// Handle in-preview navigation
+window.addEventListener('message', e => {
+  if (e.data && e.data.navigateTo) {
+    const page = e.data.navigateTo.replace(/.*\/([^/]+\.html).*/, '$1');
+    if (fileCache[page]) {
+      document.querySelectorAll('.page-btn').forEach(b => {
+        b.classList.toggle('on', b.textContent.includes(page.replace('.html','').replace('index','בית')));
+      });
+      currentPage = page;
+      document.getElementById('previewPageName').textContent = page;
+      schedulePreview(0);
+    }
+  }
+});
+
+function esc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+
+/* ===== SAVE ALL ===== */
+async function saveAll() {
+  if (!token) { toast('❌ אין GitHub Token', false); return; }
+  const btn = document.getElementById('saveBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ שומר...';
+  setStatus('שומר לגיטהאב...', true);
+
   try {
-    const f = await ghGet('admin-config.json');
-    const newSha = await ghPut('admin-config.json', body, f.sha, 'Admin: שמירת הגדרות');
-    cache['admin-config.json'] = { content: body, sha: newSha };
+    const colors = {
+      mainBg: document.getElementById('c-mainbg').value,
+      altBg:  document.getElementById('c-altbg').value,
+      nav:    document.getElementById('c-nav').value,
+      footer: document.getElementById('c-footer').value,
+      gold:   document.getElementById('c-gold').value,
+    };
+
+    // Save style.css
+    const cssF = fileCache['style.css'];
+    if (cssF) {
+      let css = cssF.content;
+      css = css.replace(new RegExp(`background-color: ${esc(currColors.mainBg)}`,'gi'), `background-color: ${colors.mainBg}`);
+      css = css.replace(new RegExp(esc(currColors.gold),'g'), colors.gold);
+      css = css.replace(new RegExp(esc(currColors.footer),'g'), colors.footer);
+      const newSha = await ghPut('style.css', css, cssF.sha, 'Admin: עדכון צבעים');
+      fileCache['style.css'] = { content: css, sha: newSha };
+    }
+
+    // Save each HTML file
+    for (const fname of ALL_HTML) {
+      const f = fileCache[fname];
+      if (!f) continue;
+      let html = f.content;
+      const orig = html;
+
+      // Colors
+      html = html.replace(new RegExp(`bg-\\[${esc(currColors.mainBg)}\\]`,'g'), `bg-[${colors.mainBg}]`);
+      html = html.replace(new RegExp(`bg-\\[${esc(currColors.altBg)}\\]`,'g'),  `bg-[${colors.altBg}]`);
+      html = html.replace(new RegExp(`bg-\\[${esc(currColors.nav)}\\]\\/95`,'g'),`bg-[${colors.nav}]/95`);
+      html = html.replace(new RegExp(`bg-\\[${esc(currColors.nav)}\\]`,'g'),    `bg-[${colors.nav}]`);
+      html = html.replace(new RegExp(`bg-\\[${esc(currColors.footer)}\\]`,'g'), `bg-[${colors.footer}]`);
+      html = html.replace(new RegExp(esc(currColors.nav),'g'),  colors.nav);
+      html = html.replace(new RegExp(esc(currColors.gold),'g'), colors.gold);
+
+      // Homepage texts
+      if (fname === 'index.html') {
+        const tagline = document.getElementById('hero-tagline').value.trim();
+        const desc    = document.getElementById('hero-desc').value.trim();
+        if (tagline) html = html.replace(/(tracking-\[0\.15em\] text-gold[^>]*>)[^<]+(<)/, `$1${tagline}$2`);
+        if (desc) html = html.replace(/(text-gray-300 max-w-2xl mx-auto leading-relaxed">\s*)[\s\S]+?(\s*<\/p>)/, `$1\n                ${desc}\n            $2`);
+        let count = 0;
+        const vals = [
+          [document.getElementById('s1v').value, document.getElementById('s1l').value],
+          [document.getElementById('s2v').value, document.getElementById('s2l').value],
+          [document.getElementById('s3v').value, document.getElementById('s3l').value],
+          [document.getElementById('s4v').value, document.getElementById('s4l').value],
+        ];
+        html = html.replace(/(text-4xl font-extrabold text-gold mb-1">)[^<]+(<\/div>\s*<div[^>]+tracking-widest">)[^<]+(<\/div>)/g,
+          (match, p1, p2, p3) => {
+            const [v,l] = vals[count]||['',''];
+            const cv = match.match(/mb-1">([^<]+)</)?.[1]||'';
+            const cl = match.match(/tracking-widest">([^<]+)<\/div>/)?.[1]||'';
+            count++;
+            return `${p1}${v||cv}${p2}${l||cl}${p3}`;
+          }
+        );
+      }
+
+      // WhatsApp in all pages
+      const wa = document.getElementById('ct-wa').value.trim();
+      if (wa) html = html.replace(/wa\.me\/\d+/g, `wa.me/${wa}`);
+
+      // Contact details in contact.html
+      if (fname === 'contact.html') {
+        const phone = document.getElementById('ct-phone').value.trim();
+        const email = document.getElementById('ct-email').value.trim();
+        if (phone) html = html.replace(/tel:[0-9\-+]+/g, `tel:${phone}`);
+        if (email) html = html.replace(/mailto:[^\s"<>]+/g, `mailto:${email}`);
+      }
+
+      if (html !== orig) {
+        const newSha = await ghPut(fname, html, f.sha, 'Admin: עדכון אתר');
+        fileCache[fname] = { content: html, sha: newSha };
+      }
+    }
+
+    // Save config
+    currColors = { ...colors };
+    const cfg = JSON.stringify({ colors: currColors, lastSaved: new Date().toISOString() }, null, 2);
+    try {
+      const existing = fileCache['admin-config.json'];
+      if (existing) {
+        const newSha = await ghPut('admin-config.json', cfg, existing.sha, 'Admin: הגדרות');
+        fileCache['admin-config.json'] = { content: cfg, sha: newSha };
+      } else {
+        const cfgRaw = await ghGet('admin-config.json');
+        const newSha = await ghPut('admin-config.json', cfg, cfgRaw.sha, 'Admin: הגדרות');
+        fileCache['admin-config.json'] = { content: cfg, sha: newSha };
+      }
+    } catch(e) {
+      await fetch(`https://api.github.com/repos/${REPO}/contents/admin-config.json`, {
+        method: 'PUT',
+        headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'Admin: יצירת קובץ הגדרות', content: btoa(unescape(encodeURIComponent(cfg))), branch: BRANCH })
+      });
+    }
+
+    hasChanges = false;
+    btn.textContent = '✅ פורסם!';
+    setTimeout(() => { btn.textContent = '💾 שמור ופרסם'; btn.disabled = false; }, 3000);
+    setStatus('', false);
+    toast('✅ נשמר ופורסם!<br><small>האתר יתעדכן תוך 2-3 דקות</small>', true);
+
   } catch(e) {
-    // File doesn't exist yet - create it
-    await fetch(`https://api.github.com/repos/${REPO}/contents/admin-config.json`, {
-      method: 'PUT',
-      headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        message: 'Admin: יצירת קובץ הגדרות',
-        content: btoa(unescape(encodeURIComponent(body))),
-        branch: BRANCH
-      })
-    });
+    btn.disabled = false;
+    btn.textContent = '💾 שמור ופרסם';
+    setStatus('', false);
+    toast('❌ שגיאה: ' + e.message, false, 10000);
   }
 }
 </script>
