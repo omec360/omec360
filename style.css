@@ -1,7 +1,7 @@
 /* ===== BASE ===== */
 body {
     font-family: 'Assistant', sans-serif;
-    background-color: #2C4C5C;
+    background-color: #001620;
     color: #f5f5f5;
     scroll-behavior: smooth;
     letter-spacing: 0.02em;
@@ -20,13 +20,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== COLORS ===== */
-.bg-gold { background-color: #F3E308; }
-.text-gold { color: #F3E308; }
-.border-gold { border-color: #F3E308; }
+.bg-gold { background-color: #f6e611; }
+.text-gold { color: #f6e611; }
+.border-gold { border-color: #f6e611; }
 
 /* ===== GRADIENT ===== */
 .gradient-text {
-    background: linear-gradient(to right, #F3E308, #B8BFC1);
+    background: linear-gradient(to right, #f6e611, #B8BFC1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -50,21 +50,21 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== PALETTE SILVER OVERRIDES ===== */
 /* Make slate-silver colors from palette visible throughout */
-body .text-gray-400 { color: #B8BFC1; }
-body .text-gray-500 { color: #8fa4b0; }
-body .text-gray-300 { color: #d4d9dc; }
+body .text-gray-400 { color: #b3c9de; }
+body .text-gray-500 { color: #7a9fb5; }
+body .text-gray-300 { color: #c6e7fb; }
 
 /* ===== CARDS ===== */
 .card-blur {
-    background: rgba(108, 132, 148, 0.18);
-    border: 1px solid rgba(184, 191, 193, 0.3);
+    background: rgba(9, 46, 61, 0.55);
+    border: 1px solid rgba(179, 201, 222, 0.1);
     transition: all 0.3s ease;
 }
 
 .card-blur:hover {
-    border-color: #F3E308;
-    background: rgba(255, 255, 255, 0.13);
-    box-shadow: 0 8px 30px rgba(243, 227, 8, 0.12);
+    border-color: #f6e611;
+    background: rgba(28, 61, 76, 0.6);
+    box-shadow: 0 8px 30px rgba(246, 230, 17, 0.12);
     transform: translateY(-4px);
 }
 
@@ -74,9 +74,9 @@ body .text-gray-300 { color: #d4d9dc; }
 }
 
 @keyframes pulse {
-    0%   { transform: scale(1);    box-shadow: 0 0 0 0   rgba(243, 227, 8, 0.4); }
-    70%  { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(243, 227, 8, 0); }
-    100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(243, 227, 8, 0); }
+    0%   { transform: scale(1);    box-shadow: 0 0 0 0   rgba(246, 230, 17, 0.4); }
+    70%  { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(246, 230, 17, 0); }
+    100% { transform: scale(1);    box-shadow: 0 0 0 0   rgba(246, 230, 17, 0); }
 }
 
 /* ===== LOGO ===== */
@@ -103,7 +103,7 @@ header .nav-link {
     right: 0;
     width: 0;
     height: 2px;
-    background: #F3E308;
+    background: #f6e611;
     transition: width 0.3s;
 }
 .nav-link:hover::after,
@@ -112,14 +112,14 @@ header .nav-link {
 }
 .nav-link:hover,
 .nav-link.active {
-    color: #F3E308;
+    color: #f6e611;
 }
 
 /* ===== PROGRAM TAG ===== */
 .tag {
-    background: rgba(243, 227, 8, 0.1);
-    border: 1px solid rgba(243, 227, 8, 0.3);
-    color: #F3E308;
+    background: rgba(246, 230, 17, 0.1);
+    border: 1px solid rgba(246, 230, 17, 0.3);
+    color: #f6e611;
     font-size: 0.7rem;
     font-weight: 700;
     padding: 4px 12px;
@@ -129,7 +129,7 @@ header .nav-link {
 
 /* ===== MODULE STEP ===== */
 .module-step {
-    border-right: 2px solid rgba(184, 191, 193, 0.3);
+    border-right: 2px solid rgba(179, 201, 222, 0.1);
     padding-right: 1.5rem;
     position: relative;
 }
@@ -141,21 +141,21 @@ header .nav-link {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #F3E308;
+    background: #f6e611;
 }
 
 /* ===== DIVIDER ===== */
 .gold-divider {
     height: 1px;
-    background: linear-gradient(to left, transparent, #F3E308, transparent);
+    background: linear-gradient(to left, transparent, #f6e611, transparent);
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: #152838 !important;
+    background-color: #001019 !important;
 }
 footer a:hover {
-    color: #F3E308;
+    color: #f6e611;
 }
 
 /* ===== MOBILE NAV ===== */
@@ -177,7 +177,7 @@ footer a:hover {
     position: absolute;
     top: -50px;
     right: 0;
-    background: #F3E308;
+    background: #f6e611;
     color: #000;
     padding: 10px 20px;
     font-weight: 800;
@@ -193,7 +193,7 @@ footer a:hover {
 
 /* Focus indicators */
 *:focus-visible {
-    outline: 3px solid #F3E308;
+    outline: 3px solid #f6e611;
     outline-offset: 3px;
     border-radius: 4px;
 }
