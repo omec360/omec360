@@ -1,8 +1,8 @@
 /* ===== BASE ===== */
 body {
     font-family: 'Assistant', sans-serif;
-    background-color: #001620;
-    color: #f5f5f5;
+    background-color: #fbf9f5;
+    color: #1b1c1a;
     scroll-behavior: smooth;
     letter-spacing: 0.02em;
     line-height: 1.6;
@@ -20,19 +20,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== COLORS ===== */
-.bg-gold { background-color: #f6e611; }
-.text-gold { color: #f6e611; }
-.border-gold { border-color: #f6e611; }
+.bg-gold { background-color: #775a19; }
+.text-gold { color: #775a19; }
+.border-gold { border-color: #775a19; }
 
 /* ===== GRADIENT ===== */
 .gradient-text {
-    background: linear-gradient(to right, #f6e611, #B8BFC1);
+    background: linear-gradient(to right, #775a19, #B8BFC1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 /* ===== HERO ===== */
 .hero-section {
+    color: #ffffff;
     background: linear-gradient(rgba(28, 56, 72, 0.45), rgba(28, 56, 72, 0.82)),
         url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
@@ -41,6 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-program {
+    color: #ffffff;
     background: linear-gradient(rgba(10, 10, 12, 0.75), rgba(10, 10, 12, 0.95)),
         var(--hero-img, url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'));
     background-size: cover;
@@ -50,21 +52,21 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== PALETTE SILVER OVERRIDES ===== */
 /* Make slate-silver colors from palette visible throughout */
-body .text-gray-400 { color: #b3c9de; }
-body .text-gray-500 { color: #7a9fb5; }
-body .text-gray-300 { color: #c6e7fb; }
+body .text-gray-400 { color: #665d52; }
+body .text-gray-500 { color: #7f7669; }
+body .text-gray-300 { color: #4d463b; }
 
 /* ===== CARDS ===== */
 .card-blur {
-    background: rgba(9, 46, 61, 0.55);
-    border: 1px solid rgba(179, 201, 222, 0.1);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(119, 90, 25, 0.15);
     transition: all 0.3s ease;
 }
 
 .card-blur:hover {
-    border-color: #f6e611;
-    background: rgba(28, 61, 76, 0.6);
-    box-shadow: 0 8px 30px rgba(246, 230, 17, 0.12);
+    border-color: #775a19;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 30px rgba(119, 90, 25, 0.12);
     transform: translateY(-4px);
 }
 
@@ -83,13 +85,13 @@ body .text-gray-300 { color: #c6e7fb; }
 /* Remove black box from logo on teal background */
 header img,
 footer img {
-    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
 }
 
 /* ===== NAV ACTIVE ===== */
 /* Force nav links dark on light nav */
 header .nav-link {
-    color: #f5f5f5;
+    color: #1b1c1a;
 }
 
 .nav-link {
@@ -103,7 +105,7 @@ header .nav-link {
     right: 0;
     width: 0;
     height: 2px;
-    background: #f6e611;
+    background: #775a19;
     transition: width 0.3s;
 }
 .nav-link:hover::after,
@@ -112,14 +114,14 @@ header .nav-link {
 }
 .nav-link:hover,
 .nav-link.active {
-    color: #f6e611;
+    color: #775a19;
 }
 
 /* ===== PROGRAM TAG ===== */
 .tag {
     background: rgba(246, 230, 17, 0.1);
     border: 1px solid rgba(246, 230, 17, 0.3);
-    color: #f6e611;
+    color: #775a19;
     font-size: 0.7rem;
     font-weight: 700;
     padding: 4px 12px;
@@ -129,7 +131,7 @@ header .nav-link {
 
 /* ===== MODULE STEP ===== */
 .module-step {
-    border-right: 2px solid rgba(179, 201, 222, 0.1);
+    border-right: 2px solid rgba(119, 90, 25, 0.2);
     padding-right: 1.5rem;
     position: relative;
 }
@@ -141,21 +143,21 @@ header .nav-link {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #f6e611;
+    background: #775a19;
 }
 
 /* ===== DIVIDER ===== */
 .gold-divider {
     height: 1px;
-    background: linear-gradient(to left, transparent, #f6e611, transparent);
+    background: linear-gradient(to left, transparent, #775a19, transparent);
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: #001019 !important;
+    background-color: #efeeea !important;
 }
 footer a:hover {
-    color: #f6e611;
+    color: #775a19;
 }
 
 /* ===== MOBILE NAV ===== */
@@ -177,8 +179,8 @@ footer a:hover {
     position: absolute;
     top: -50px;
     right: 0;
-    background: #f6e611;
-    color: #000;
+    background: #775a19;
+    color: #ffffff;
     padding: 10px 20px;
     font-weight: 800;
     font-size: 16px;
@@ -193,7 +195,7 @@ footer a:hover {
 
 /* Focus indicators */
 *:focus-visible {
-    outline: 3px solid #f6e611;
+    outline: 3px solid #775a19;
     outline-offset: 3px;
     border-radius: 4px;
 }
